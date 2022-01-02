@@ -17,6 +17,7 @@
   :root {
     --background: #0f0e17;
     --background-secondary: #242629;
+    --background-terirary: #16161a; 
     --headline: #fffffe;
     --paragraph: #94a1b2;
     --primary: #7f5af0;
