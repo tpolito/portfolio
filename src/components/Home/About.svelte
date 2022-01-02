@@ -7,7 +7,7 @@
     <div class="bio">
      <div class="about-me">
        <h2>Who am I?</h2>
-       <p>Hello! 👋 My name is <span class="highlight">Tyler Polito</span>, a software engineer from Texas. I love creating small, (hopefully) useful side projects so they can exist somewhere other than in my head. I have a passion for learning about technology and usually do so by creating small apps.</p>
+       <p>Hello! 👋 My name is <span class="highlight">Tyler Polito</span>, a software engineer from Texas. I love creating small, (hopefully) useful side projects so they can exist somewhere other than in my head. I have a passion for learning about technology old and new. Usually by creating small apps.</p>
       <p>Outside the realm of technology I am an avid rockclimber, and love the outdoors. I have a dog named Evee (like the Pokemon) and enjoy reading books.</p>
       </div>
      <div class="me-image">
