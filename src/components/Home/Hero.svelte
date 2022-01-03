@@ -1,12 +1,12 @@
 <script lang="ts">
-  import FlipWord from '../UI/FlipWord.svelte';
-  import BlinkingCursor from '../UI/BlinkingCursor.svelte';
-  import LearnMore from '../UI/LearnMore.svelte';
+  import FlipWord from '../ui/animations/FlipWord.svelte';
+  import BlinkingCursor from '../ui/animations/BlinkingCursor.svelte';
+  import LearnMore from '../ui/layout/LearnMore.svelte';
 </script>
 
 <section class="section" id="hero">
   <h1>Hi, I'm Tyler. A Fullstack Software Engineer.<BlinkingCursor /></h1>
-  <h2>I design and build software for people using <FlipWord words={['Typescript', 'React', 'Node.js', 'Go', 'C#', 'Godot']} /></h2>
+  <h2 class="subtitle">I design and build software for people using <FlipWord words={['Typescript', 'React', 'Node.js', 'Go', 'C#', 'Godot']} /></h2>
   <LearnMore />
 </section>
 
@@ -30,7 +30,8 @@
     align-items: center;
     margin-top: auto;
   }
-  h2 {
+  .subtitle {
+    font-size: 1.3rem;
     color: var(--paragraph);
   } 
 </style>

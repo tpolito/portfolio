@@ -1,6 +1,6 @@
 <script lang="ts">
 import { fade } from 'svelte/transition';
-import { randomIntFromInterval } from '../../utils' 
+import { randomIntFromInterval } from '../../../utils';
 
 export let words: string[];
 export let color = '#7f5af0';

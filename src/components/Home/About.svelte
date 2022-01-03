@@ -23,12 +23,7 @@
 <style>
   #about {
     background-color: var(--background-secondary); 
-  } 
-  h2 {
-    font-size: 3rem;
-    color: var(--headline);
-    margin: 0;
-  }
+  }  
   p {
     line-height: 1.8;
   }

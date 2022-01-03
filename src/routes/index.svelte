@@ -1,8 +1,8 @@
 <script lang="ts">
-  import About from '../components/Home/About.svelte'
-  import Activity from '../components/Home/Activity.svelte'
-  import Contact from '../components/Home/Contact.svelte'
-  import Hero from '../components/Home/Hero.svelte'
+  import About from '../components/home/About.svelte'
+  import Activity from '../components/home/Activity.svelte'
+  import Contact from '../components/home/Contact.svelte'
+  import Hero from '../components/home/Hero.svelte'
 </script>
 
 <div>
@@ -34,6 +34,11 @@
     color: var(--paragraph);
     font-size: 1.2rem;
     font-weight: 500;
+  }
+  :global(h2) {
+    font-size: 3rem;
+    color: var(--headline);
+    margin: 0;
   }
   :global(.section){
     padding: 8rem 0;

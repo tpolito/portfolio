@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { truncateString } from '../../utils'
+  import { truncateString } from '../../../utils'
   export let date: string;
   export let msg: string;
 </script>

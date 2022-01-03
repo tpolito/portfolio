@@ -1,9 +1,9 @@
 <script lang="ts">
-  import GithubFeed from "../UI/GithubFeed.svelte";
-  import ProjectCard from "../UI/ProjectCard.svelte";
+  import GithubFeed from "../ui/layout/GithubFeed.svelte";
+  import ProjectCard from "../ui/layout/ProjectCard.svelte";
 </script>
 
-<section class="section" id="about">
+<section class="section" id="activity">
   <div class="container">
     <div class="activity">
      <div class="project-cards"> 
@@ -18,18 +18,13 @@
 </section>
 
 <style>
-  #about {
+  #activity {
     background-color: var(--background);
     background-image: url('../../assets/animated-shapes.svg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 500px;
-  } 
-  h2 {
-    font-size: 3rem;
-    color: var(--headline);
-    margin: 0;
-  }
+  }  
   .container {
     width: 90%;
     max-width: 1040px;

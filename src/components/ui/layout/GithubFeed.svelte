@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { truncateString } from '../../utils'
+  import { truncateString } from '../../../utils'
 import CommitCard from './CommitCard.svelte'
 
   // Once we fetch the data, ensure we splice the results down to four.
