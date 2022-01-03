@@ -15,7 +15,7 @@ function random() {
 random();
 </script>
 
-<span style="background-color: {color}" class="bg">
+<span class="bg">
   {#key currentWord}
     <span in:fade="{{delay: 150, duration: 700}}">{currentWord}</span>
   {/key}
@@ -23,7 +23,8 @@ random();
 
 <style>
   .bg {
-    color: #fffffe;
+    background-color: var(--primary);
+    color: var(--headline);
     padding: 3px;
   }
 </style>

@@ -21,7 +21,7 @@
     text-decoration: none;
   }
   .card {
-    background-color: var(--background-terirary);
+    background-color: var(--background-secondary);
     padding: 1.5rem;
     border-radius: 3px;
     cursor: pointer;

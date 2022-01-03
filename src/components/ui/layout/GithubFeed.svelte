@@ -24,17 +24,22 @@ import CommitCard from './CommitCard.svelte'
 </script>
 
 <div class="container">
-  {#each mock as commit}
-    <CommitCard date={commit.date} msg={commit.msg} />
-  {/each}
+  <div class="line" />
+  <div>
+    {#each mock as commit}
+      <CommitCard date={commit.date} msg={commit.msg} />
+    {/each}
+  </div>
 </div>
 
 <style> 
   .container {
-    /* height: 500px; */
-    /* width: 500px; */
-    background-color: var(--background-terirary);
+    background-color: var(--background-secondary);
     border-radius: 3px;
     padding: 1.5rem;
-  } 
+    display: flex;
+  }
+  .line {
+    border: 1px solid var(--paragraph); 
+  }
 </style>

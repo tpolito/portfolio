@@ -4,9 +4,29 @@
   import Contact from '../components/home/Contact.svelte'
   import Hero from '../components/home/Hero.svelte'
   import Footer from '../components/home/Footer.svelte'
+  import { theme } from '../stores/themeStore'
+  import { lightTheme, darkTheme } from '../theme'
+
+  let rootElement: HTMLDivElement;
+  let themeValue = true; 
+  $: currentTheme = themeValue ? darkTheme : lightTheme;
+
+  const unsubscribe = theme.subscribe(value => {
+    console.log(value)
+    themeValue = value
+  })
+  // Ugly but I couldn't find a better way when searching
+  $:rootElement && Object.keys(currentTheme).forEach(prop => {
+    rootElement.style.setProperty(`--${prop}`, currentTheme[prop])
+  })
+
+  function handleThemeToggle() {
+    theme.update(value => !value)
+  }
 </script>
 
-<div>
+<div bind:this={rootElement}>
+  <button style="position: fixed;" on:click={handleThemeToggle} >Change theme</button>
   <Hero />
   <About />
   <Activity />
@@ -17,13 +37,12 @@
 <style>
   /* Globals */
   :root {
-    --background: #0f0e17;
-    --background-secondary: #242629;
-    --background-terirary: #16161a; 
-    --headline: #fffffe;
-    --paragraph: #94a1b2;
-    --primary: #7f5af0;
-    --secondary: #2cb67d;
+    --background: inherit;
+    --background-secondary: inherit; 
+    --headline: inherit;
+    --paragraph: inherit;
+    --primary: inherit;
+    --secondary: inherit;
   }
   :global(body){
     /* background-color: var(--background); */
@@ -41,6 +60,16 @@
     font-size: 3rem;
     color: var(--headline);
     margin: 0;
+  }
+  :global(button) {
+    height: 2.5rem;
+    width: 12rem;
+    background-color: var(--primary);
+    color: var(--headline);
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
   }
   :global(.section){
     padding: 8rem 0;

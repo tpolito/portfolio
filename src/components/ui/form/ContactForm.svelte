@@ -32,11 +32,11 @@
     height: 2rem;
     margin-bottom: 0px;
     padding-left: 1.2rem;
-    border: 3px solid var(--background-terirary);
+    border: 3px solid var(--background);
     border-radius: 3px;
     font-weight: 700;
-    background-color: var(--background-terirary);
-    border-color: var(--background-terirary);
+    background-color: var(--background);
+    border-color: var(--background);
     color: var(--headline);
     line-height: 1.4rem;
   }
@@ -47,20 +47,12 @@
     border: 2px solid red;
   }
   button {
-    height: 2.5rem;
-    width: 12rem;
-    background-color: var(--primary);
-    color: var(--headline);
-    font-weight: 700;
-    border-radius: 3px;
-    cursor: pointer;
-    border: none;
-    transition: .3s
+    transition: .3s;
   }
   button:hover {
     transform:translateY(-4px);
   }
   .input-container {
     margin-right: 1.2rem; 
-  }
+  } 
 </style>

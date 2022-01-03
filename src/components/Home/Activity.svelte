@@ -10,7 +10,7 @@
        <h2>What I'm working on</h2>
        <ProjectCard link={'https://github.com/tpolito/ror2-graphql'} title="Risk of Rain API" desc="A GraphQL API for Risk of Rain 2" />
        <ProjectCard link={'https://dndtoolkit.app/'} title="DnD Toolkit" desc="A light-weight digital toolset for Dungeons and Dragons" />
-       <ProjectCard link={'https://poetril.itch.io/slimey-towers'} title="Slimey Towers" desc="A trickey, phsyics, tetris-light game made for Ludam Dare 49" />
+       <ProjectCard link={'https://poetril.itch.io/slimey-towers'} title="Slimey Towers" desc="A trickey, phsyics, tetris-like game made for Ludam Dare 49" />
       </div>
       <GithubFeed /> 
     </div> 
