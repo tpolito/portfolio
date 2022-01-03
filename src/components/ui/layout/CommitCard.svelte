@@ -8,8 +8,8 @@
 <div class="commit-card">
   <img src="https://via.placeholder.com/40x40" alt="github avatar" />
   <div>
-    <p class="commit-message"><em>{date}</em></p>
-    <p class="commit-message">{truncateString(msg, 60)}</p>
+    <p class="commit commit-date"><em>{date}</em></p>
+    <p class="commit commit-message">{truncateString(msg, 60)}</p>
   </div>
 </div>
 
@@ -27,9 +27,12 @@
     justify-content: flex-start; 
     align-items: center;
   }
-  .commit-message {
+  .commit {
     line-height: 1;
     font-size: .8rem;
     margin-left: .5rem;
+  }
+  .commit-date {
+    color: var(--headline);
   }
 </style>

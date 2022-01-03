@@ -3,6 +3,7 @@
   import Activity from '../components/home/Activity.svelte'
   import Contact from '../components/home/Contact.svelte'
   import Hero from '../components/home/Hero.svelte'
+  import Footer from '../components/home/Footer.svelte'
 </script>
 
 <div>
@@ -10,6 +11,7 @@
   <About />
   <Activity />
   <Contact />
+  <Footer />
 </div>
 
 <style>
