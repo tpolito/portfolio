@@ -1,12 +1,12 @@
 <script lang="ts">
-  import About from '../components/home/About.svelte'
-  import Activity from '../components/home/Activity.svelte'
-  import Contact from '../components/home/Contact.svelte'
-  import Hero from '../components/home/Hero.svelte'
-  import Footer from '../components/home/Footer.svelte'
-  import { theme } from '../stores/themeStore'
-  import { lightTheme, darkTheme } from '../theme'
-
+  import About from '../components/home/About.svelte';
+  import Activity from '../components/home/Activity.svelte';
+  import Contact from '../components/home/Contact.svelte';
+  import Hero from '../components/home/Hero.svelte';
+  import Footer from '../components/home/Footer.svelte';
+  import { theme } from '../stores/themeStore';
+  import { lightTheme, darkTheme } from '../theme';
+  // Theme stuff isn't work rn casue I'm lazy
   let rootElement: HTMLDivElement;
   let themeValue = true; 
   $: currentTheme = themeValue ? darkTheme : lightTheme;
@@ -26,7 +26,6 @@
 </script>
 
 <div bind:this={rootElement}>
-  <button style="position: fixed;" on:click={handleThemeToggle} >Change theme</button>
   <Hero />
   <About />
   <Activity />
