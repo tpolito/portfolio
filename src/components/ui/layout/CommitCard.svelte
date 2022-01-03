@@ -6,7 +6,7 @@
 
 
 <div class="commit-card">
-  <img src="https://via.placeholder.com/40x40" alt="github avatar" />
+  <img src="https://avatars.githubusercontent.com/u/29431348?v=4" alt="github avatar" />
   <div>
     <p class="commit commit-date"><em>{date}</em></p>
     <p class="commit commit-message">{truncateString(msg, 60)}</p>
@@ -17,6 +17,8 @@
 <style>
   img {
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
   } 
   .commit-card {
     border: 1px solid var(--headline);
