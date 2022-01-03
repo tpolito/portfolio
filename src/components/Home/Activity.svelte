@@ -1,6 +1,6 @@
 <script lang="ts">
-import GithubFeed from "../UI/GithubFeed.svelte";
-import ProjectCard from "../UI/ProjectCard.svelte";
+  import GithubFeed from "../UI/GithubFeed.svelte";
+  import ProjectCard from "../UI/ProjectCard.svelte";
 </script>
 
 <section class="section" id="about">
@@ -12,7 +12,7 @@ import ProjectCard from "../UI/ProjectCard.svelte";
        <ProjectCard link={'https://google.com'} />
        <ProjectCard link={'https://google.com'} />
       </div>
-    <GithubFeed /> 
+      <GithubFeed /> 
     </div> 
   </div>
 </section>
