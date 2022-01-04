@@ -54,4 +54,17 @@
 	.input-container {
 		margin-right: 1.2rem;
 	}
+
+	@media screen and (max-width: 900px) {
+		form {
+			flex-direction: column;
+			align-items: center;
+		}
+		.input-container {
+			margin: 0.4rem 0;
+		}
+		button {
+			margin-top: 0.8rem;
+		}
+	}
 </style>

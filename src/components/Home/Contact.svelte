@@ -21,4 +21,9 @@
 		max-width: 1040px;
 		margin: 0 auto;
 	}
+	@media screen and (max-width: 900px) {
+		h2 {
+			text-align: center;
+		}
+	}
 </style>

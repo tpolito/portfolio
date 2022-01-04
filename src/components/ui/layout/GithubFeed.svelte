@@ -42,4 +42,9 @@
 	.line {
 		border: 1px solid var(--paragraph);
 	}
+	@media screen and (max-width: 900px) {
+		.container {
+			display: none;
+		}
+	}
 </style>

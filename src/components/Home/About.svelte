@@ -46,4 +46,12 @@
 	.about-me {
 		margin-right: 3rem;
 	}
+	@media screen and (max-width: 900px) {
+		.bio {
+			flex-direction: column;
+		}
+		h2 {
+			text-align: center;
+		}
+	}
 </style>

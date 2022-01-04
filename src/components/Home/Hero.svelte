@@ -33,6 +33,10 @@
 		display: flex;
 		align-items: center;
 		margin-top: auto;
+		text-align: center;
+	}
+	h2 {
+		text-align: center;
 	}
 	.subtitle {
 		font-size: 1.3rem;

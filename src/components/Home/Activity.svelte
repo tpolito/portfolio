@@ -50,4 +50,12 @@
 	.project-cards {
 		margin-right: 3rem;
 	}
+	@media screen and (max-width: 900px) {
+		.project-cards {
+			padding-bottom: 1rem;
+		}
+		h2 {
+			text-align: center;
+		}
+	}
 </style>
