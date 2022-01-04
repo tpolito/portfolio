@@ -1,15 +1,20 @@
 <script lang="ts">
 	import { truncateString } from '../../../utils';
-	export let date: string;
-	export let msg: string;
+	import type { tCommit } from '../../../types';
+	export let commitData: tCommit;
+
+	const { commit } = commitData;
+	const { message, committer } = commit;
+	const { date } = committer;
+	let dateFormatted = new Date(date).toDateString();
 </script>
 
 <div class="commit-card">
 	<div class="line" />
 	<img src="https://avatars.githubusercontent.com/u/29431348?v=4" alt="github avatar" />
 	<div>
-		<p class="commit commit-date"><em>{date}</em></p>
-		<p class="commit commit-message">{truncateString(msg, 60)}</p>
+		<p class="commit commit-date"><em>tpolito {dateFormatted}</em></p>
+		<p class="commit commit-message">{truncateString(message, 60)}</p>
 	</div>
 </div>
 
