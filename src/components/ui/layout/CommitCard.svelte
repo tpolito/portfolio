@@ -13,7 +13,7 @@
 	<div class="line" />
 	<img src="https://avatars.githubusercontent.com/u/29431348?v=4" alt="github avatar" />
 	<div>
-		<p class="commit commit-date"><em>tpolito {dateFormatted}</em></p>
+		<p class="commit commit-date"><em>tpolito - {dateFormatted}</em></p>
 		<p class="commit commit-message">{truncateString(message, 60)}</p>
 	</div>
 </div>

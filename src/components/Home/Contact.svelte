@@ -7,9 +7,9 @@
 		<h2>Want to get in touch?</h2>
 		<p>
 			Feel free to <a href="mailto: tyler@tylerpolito.info" class="highlight"
-				>send me an email at
-			</a>or add me on Discord
-			<span class="highlight">Tyler#1074</span>
+				>send me an email
+			</a>or send me a message on Discord
+			<span class="highlight">Tyler#1074</span>.
 		</p>
 	</div>
 </section>
@@ -28,6 +28,7 @@
 		width: 90%;
 		max-width: 1040px;
 		margin: 0 auto;
+		text-align: center;
 	}
 	.highlight {
 		padding: 2px;
