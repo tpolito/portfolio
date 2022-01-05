@@ -1,3 +1,4 @@
+import type { tCommit } from 'src/types';
 import { variables } from './variables';
 
 const headers = {
@@ -5,7 +6,7 @@ const headers = {
 	Authorization: `token ${variables.viteGithubToken}`
 };
 
-export async function fetchRecentRepos() {
+export async function fetchRecentRepos(): Promise<tCommit[]> {
 	const repos = await fetch('https://api.github.com/users/tpolito/repos?sort=updated&per_page=3', {
 		headers
 	});
