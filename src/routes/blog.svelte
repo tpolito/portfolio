@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { initClient, operationStore, query } from '@urql/svelte';
+	import { variables } from '../utils';
 
 	initClient({
 		url: 'https://graphql.datocms.com/preview',
@@ -7,7 +8,7 @@
 			return {
 				headers: {
 					'content-type': 'application/json',
-					authorization: 'Bearer 8e4b976b32c35a76e44160fb6d0ae7'
+					authorization: `Bearer ${variables.datoCms}`
 				}
 			};
 		}
