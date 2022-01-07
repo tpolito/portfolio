@@ -6,13 +6,11 @@
 	import Footer from '../components/home/Footer.svelte';
 </script>
 
-<div>
-	<Hero />
-	<About />
-	<Activity />
-	<Contact />
-	<Footer />
-</div>
+<Hero />
+<About />
+<Activity />
+<Contact />
+<Footer />
 
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />

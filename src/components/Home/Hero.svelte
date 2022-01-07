@@ -2,9 +2,11 @@
 	import FlipWord from '../ui/animations/FlipWord.svelte';
 	import BlinkingCursor from '../ui/animations/BlinkingCursor.svelte';
 	import LearnMore from '../ui/layout/LearnMore.svelte';
+	import Button from '../ui/layout/Button.svelte';
 </script>
 
 <section class="section" id="hero">
+	<Button pull={'right'} text="Blog" link="/blog" />
 	<h1>Hi, I'm Tyler. A Fullstack Software Engineer.<BlinkingCursor /></h1>
 	<h2 class="subtitle">
 		I design and build software for people using <FlipWord

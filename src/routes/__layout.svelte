@@ -1,4 +1,18 @@
 <script lang="ts">
+	import { initClient } from '@urql/svelte';
+	import { variables } from '../utils';
+
+	initClient({
+		url: 'https://graphql.datocms.com/preview',
+		fetchOptions: () => {
+			return {
+				headers: {
+					'content-type': 'application/json',
+					authorization: `Bearer ${variables.viteDatoCms}`
+				}
+			};
+		}
+	});
 </script>
 
 <slot />
@@ -13,7 +27,7 @@
 		--secondary: #2cb67d;
 	}
 	:global(body) {
-		/* background-color: var(--background); */
+		background-color: var(--background);
 		font-family: 'Roboto', sans-serif;
 		margin: 0;
 		padding: 0;
@@ -23,6 +37,9 @@
 		color: var(--paragraph);
 		font-size: 1.2rem;
 		font-weight: 500;
+	}
+	:global(h1) {
+		color: var(--headline);
 	}
 	:global(h2) {
 		font-size: 3rem;
