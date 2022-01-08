@@ -17,7 +17,10 @@
 				</p>
 			</div>
 			<div class="me-image">
-				<img alt="The author" src="https://via.placeholder.com/468x468" />
+				<img
+					alt="The author"
+					src="https://www.datocms-assets.com/60736/1641673916-portfolio_picture.png"
+				/>
 			</div>
 		</div>
 		<div class="other-projects">
@@ -32,6 +35,9 @@
 	}
 	p {
 		line-height: 1.8;
+	}
+	img {
+		width: 30rem;
 	}
 	.container {
 		width: 90%;
