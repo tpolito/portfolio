@@ -88,8 +88,8 @@
 
 	:global(.post img) {
 		display: block;
-		height: 10rem;
 		margin: 0 auto;
+		width: 90%;
 	}
 
 	:global(.post) {
