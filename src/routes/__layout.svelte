@@ -1,6 +1,17 @@
+<script context="module">
+	export const load = async ({ params }) => ({
+		props: {
+			key: params.path
+		}
+	});
+</script>
+
 <script lang="ts">
 	import { initClient } from '@urql/svelte';
 	import { variables } from '../utils';
+	import PageTransition from '../components/ui/animations/PageTransition.svelte';
+
+	export let key;
 
 	initClient({
 		url: 'https://graphql.datocms.com/preview',
@@ -15,7 +26,9 @@
 	});
 </script>
 
-<slot />
+<PageTransition refresh={key}>
+	<slot />
+</PageTransition>
 
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
