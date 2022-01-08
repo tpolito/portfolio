@@ -8,8 +8,8 @@
 
 <script lang="ts">
 	import { gql, operationStore, query } from '@urql/svelte';
-	import { variables } from '../../utils';
 	import Spinner from '../../components/ui/layout/Spinner.svelte';
+	import Post from '../../components/blog/Post.svelte';
 
 	export let slug;
 
@@ -26,17 +26,16 @@
 	const post = operationStore(postQuery, { slug });
 
 	query(post);
+	console.log(post);
 </script>
 
-<div id="feed">
-	{#if $post.fetching}
-		<Spinner />
-	{:else if $post.error}
-		<p>An error</p>
-	{:else}
-		<pre />
-	{/if}
-</div>
+{#if $post.fetching}
+	<Spinner />
+{:else if $post.error}
+	<p>An error</p>
+{:else}
+	<Post post={$post.data.blogPost.post} />
+{/if}
 
 <style>
 </style>

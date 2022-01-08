@@ -11,8 +11,8 @@ export const projectCards = [
 		desc: 'A light-weight digital toolset for Dungeons and Dragons'
 	},
 	{
-		link: 'https://poetril.itch.io/slimey-towers',
-		title: 'Slimey Towers',
-		desc: 'A trickey, phsyics, tetris-like game made for Ludam Dare 49'
+		link: '/blog',
+		title: 'Blog',
+		desc: 'A blog that focuses on web and game development.'
 	}
 ];

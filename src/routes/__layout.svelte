@@ -17,6 +17,14 @@
 
 <slot />
 
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+		rel="stylesheet"
+	/>
+</svelte:head>
+
 <style>
 	:root {
 		--background: #16161a;
@@ -63,5 +71,37 @@
 		background-color: var(--primary);
 		padding: 2px;
 		color: var(--headline);
+	}
+
+	:global(.post img) {
+		display: block;
+		height: 10rem;
+		margin: 0 auto;
+	}
+
+	:global(.post) {
+		width: 50%;
+		padding: 2rem;
+		margin: 2rem auto;
+		background-color: var(--background-secondary);
+		border-radius: 4px;
+		color: var(--paragraph);
+		line-height: 1.6rem;
+	}
+	:global(.post p) {
+		font-size: 1rem;
+	}
+	:global(.post h3) {
+		color: var(--headline);
+	}
+	:global(.post a) {
+		color: var(--primary);
+		padding: 2px;
+		font-weight: 500;
+	}
+	:global(.post pre) {
+		background-color: var(--background);
+		padding: 0.8rem;
+		border-radius: 3px;
 	}
 </style>

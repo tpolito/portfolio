@@ -12,14 +12,6 @@
 <Contact />
 <Footer />
 
-<svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
-
 <style>
 	.section {
 		padding: 8rem 0;
