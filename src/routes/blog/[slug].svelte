@@ -8,8 +8,8 @@
 
 <script lang="ts">
 	import { gql, operationStore, query } from '@urql/svelte';
-	import Spinner from '../../components/ui/layout/Spinner.svelte';
-	import Post from '../../components/blog/Post.svelte';
+	import Spinner from '../../lib/ui/layout/Spinner.svelte';
+	import Post from '../../lib/blog/Post.svelte';
 
 	export let slug;
 

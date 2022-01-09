@@ -9,7 +9,7 @@
 <script lang="ts">
 	import { initClient } from '@urql/svelte';
 	import { variables } from '../utils';
-	import PageTransition from '../components/ui/animations/PageTransition.svelte';
+	import PageTransition from '../lib/ui/animations/PageTransition.svelte';
 
 	export let key;
 
