@@ -6,6 +6,11 @@
 	import About from '../lib/home/About.svelte';
 </script>
 
+<svelte:head>
+	<title>Home - TPolito</title>
+	<html lang="en" />
+</svelte:head>
+
 <Hero />
 <About />
 <Activity />

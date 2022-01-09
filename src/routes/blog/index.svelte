@@ -23,6 +23,11 @@
 	query(posts);
 </script>
 
+<svelte:head>
+	<title>Blog - TPolito</title>
+	<html lang="en" />
+</svelte:head>
+
 <div id="feed">
 	<h1>Latest posts</h1>
 	{#if $posts.fetching}
