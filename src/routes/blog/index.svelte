@@ -3,7 +3,6 @@
 	import PostCard from '../../components/ui/layout/PostCard.svelte';
 	import Spinner from '../../components/ui/layout/Spinner.svelte';
 	import Button from '../../components/ui/layout/Button.svelte';
-	import Footer from '../../components/home/Footer.svelte';
 
 	const recentPostQuery = gql`
 		query {
