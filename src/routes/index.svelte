@@ -11,14 +11,3 @@
 <Activity />
 <Contact />
 <Footer />
-
-<style>
-	.section {
-		padding: 8rem 0;
-	}
-	.highlight {
-		background-color: var(--primary);
-		padding: 2px;
-		color: var(--headline);
-	}
-</style>
