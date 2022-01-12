@@ -42,6 +42,7 @@
 	@media screen and (max-width: 900px) {
 		.project-cards {
 			padding-bottom: 1rem;
+			margin-right: 0;
 		}
 		h2 {
 			text-align: center;

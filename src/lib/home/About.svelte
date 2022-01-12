@@ -59,5 +59,8 @@
 		h2 {
 			text-align: center;
 		}
+		img {
+			width: 100%;
+		}
 	}
 </style>
