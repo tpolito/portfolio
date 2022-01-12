@@ -100,12 +100,12 @@
 		border-radius: 4px;
 		color: var(--paragraph);
 		line-height: 1.6rem;
+		font-size: 1.2rem;
 	}
-	:global(.post p) {
-		font-size: 1rem;
-	}
+
 	:global(.post h3) {
 		color: var(--headline);
+		font-size: 1.6rem;
 	}
 	:global(.post a) {
 		color: var(--primary);
