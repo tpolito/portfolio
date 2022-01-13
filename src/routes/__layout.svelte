@@ -117,4 +117,11 @@
 		padding: 0.8rem;
 		border-radius: 3px;
 	}
+
+	:global(.post blockquote) {
+		background-color: var(--background);
+		padding: 1.5rem;
+		border-radius: 3px;
+		border-left: 4px solid var(--headline);
+	}
 </style>
