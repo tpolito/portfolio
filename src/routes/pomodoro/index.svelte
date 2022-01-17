@@ -3,6 +3,7 @@
 
 	let onBreak = false;
 	let pomodoroCount = 0;
+
 	let timerOn = false;
 	let timerPaused = false;
 	let timeLabel = formatTime(25, 0);
@@ -33,9 +34,14 @@
 	}
 
 	function resetTimer() {
-		timerOn = false;
-		clearInterval(timerInterval);
-		timeLabel = formatTime(25, 0);
+		let result = confirm('Are you sure you want to restart your timer?');
+		if (result) {
+			timerOn = false;
+			timerPaused = false;
+			clearInterval(timerInterval);
+			timeRemaining = 25;
+			timeLabel = formatTime(25, 0);
+		}
 	}
 
 	function pauseTimer() {
@@ -77,7 +83,7 @@
 				<button class="timer-toggle" on:click={() => toggleTimer(timeRemaining / 60)}>Resume</button
 				>
 			{/if}
-			<button class="timer-stop" disabled={!timerOn} on:click={resetTimer}
+			<button class="timer-stop" on:click={resetTimer}
 				><div class="icon"><FaStopCircle /></div></button
 			>
 		</div>
