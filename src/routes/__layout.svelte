@@ -76,6 +76,18 @@
 		border-radius: 3px;
 		cursor: pointer;
 		border: none;
+		transition: all 0.2s ease-in-out;
+	}
+	:global(button:hover) {
+		background-color: #8a6aee;
+	}
+	:global(button:disabled) {
+		background-color: #7f5af04d;
+		cursor: default;
+	}
+	:global(button:disabled:hover) {
+		background-color: #7f5af04d;
+		cursor: default;
 	}
 	:global(.section) {
 		padding: 8rem 0;
@@ -86,12 +98,7 @@
 		color: var(--headline);
 	}
 
-	:global(.post img) {
-		display: block;
-		margin: 0 auto;
-		width: 90%;
-	}
-
+	/* Need to add post styling to layout for some reason, doesn't work at the component level */
 	:global(.post) {
 		width: 50%;
 		padding: 2rem;
@@ -102,7 +109,11 @@
 		line-height: 1.6rem;
 		font-size: 1.2rem;
 	}
-
+	:global(.post img) {
+		display: block;
+		margin: 0 auto;
+		width: 90%;
+	}
 	:global(.post h3) {
 		color: var(--headline);
 		font-size: 1.6rem;
@@ -117,7 +128,6 @@
 		padding: 0.8rem;
 		border-radius: 3px;
 	}
-
 	:global(.post blockquote) {
 		background-color: var(--background);
 		padding: 1.5rem;
