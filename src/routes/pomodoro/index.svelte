@@ -34,13 +34,15 @@
 	}
 
 	function resetTimer() {
-		let result = confirm('Are you sure you want to restart your timer?');
+		let result = confirm('Are you sure you want to restart your pomodoro?');
 		if (result) {
 			timerOn = false;
 			timerPaused = false;
 			clearInterval(timerInterval);
 			timeRemaining = 25;
 			timeLabel = formatTime(25, 0);
+			onBreak = false;
+			pomodoroCount = 0;
 		}
 	}
 
@@ -71,7 +73,11 @@
 
 <div class="container">
 	<h1>Pomodoro Timer</h1>
-	<div class="timer-container">
+	<div class="timer-container {timerOn && 'glow'}">
+		<div class="status-bar">
+			<span class={!onBreak && 'active'}>Focusing</span>
+			<span class={onBreak && 'active'}>Short Break</span>
+		</div>
 		<h2 class="timer-counter">{timeLabel}</h2>
 		<hr />
 		<div class="button-group">
@@ -113,8 +119,11 @@
 		border-radius: 3px;
 		transition: 200ms;
 		width: 22rem;
-		/* filter: drop-shadow(0 0 0.75rem var(--primary)); */
 	}
+	.glow {
+		filter: drop-shadow(0 0 0.75rem var(--primary));
+	}
+
 	.timer-counter {
 		text-align: center;
 		margin: 0;
@@ -131,5 +140,20 @@
 	}
 	.timer-stop .icon {
 		height: 1.5rem;
+	}
+	.status-bar {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	.status-bar span {
+		margin: 0 0.2rem;
+		color: var(--headline);
+	}
+	.status-bar .active {
+		padding: 0.4rem;
+		margin: 0;
+		background-color: rgba(0, 0, 0, 0.15);
+		text-align: center;
+		font-weight: 500;
 	}
 </style>
