@@ -72,6 +72,7 @@
 </script>
 
 <div class="container">
+	<a class="home-link" href="/tools">Back</a>
 	<h1>Pomodoro Timer</h1>
 	<div class="timer-container {timerOn && 'glow'}">
 		<div class="status-bar">
@@ -104,7 +105,7 @@
 		border: 1px solid var(--headline);
 	}
 	.container {
-		background-image: url('../../assets/animated-shapes.svg');
+		background-image: url('../../../assets/animated-shapes.svg');
 		background-repeat: no-repeat;
 		background-size: cover;
 		display: flex;
@@ -112,6 +113,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		postion: relative;
 	}
 	.timer-container {
 		background-color: var(--background-secondary);
@@ -123,7 +125,6 @@
 	.glow {
 		filter: drop-shadow(0 0 0.75rem var(--primary));
 	}
-
 	.timer-counter {
 		text-align: center;
 		margin: 0;
@@ -155,5 +156,11 @@
 		background-color: rgba(0, 0, 0, 0.15);
 		text-align: center;
 		font-weight: 500;
+	}
+	.home-link {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+		color: var(--headline);
 	}
 </style>
