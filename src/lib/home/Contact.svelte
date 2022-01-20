@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ContactForm from '../ui/form/ContactForm.svelte';
 </script>
 
 <section class="section" id="contact">
