@@ -9,45 +9,18 @@
 	let dateFormatted = new Date(date).toDateString();
 </script>
 
-<div class="commit-card">
-	<div class="line" />
-	<img src="https://avatars.githubusercontent.com/u/29431348?v=4" alt="github avatar" />
+<div class="p-4 my-4 mx-2 flex justify-start items-center relative">
+	<div class="absolute w-3 h-1 bg-paragraph -left-2" />
+	<img
+		src="https://avatars.githubusercontent.com/u/29431348?v=4"
+		class="rounded-full w-10 h-10"
+		alt="github avatar"
+	/>
 	<div>
-		<p class="commit commit-date"><em>tpolito - {dateFormatted}</em></p>
-		<p class="commit commit-message">{truncateString(message, 60)}</p>
+		<p class="leading-4 text-sm ml-2 text-headline"><em>tpolito - {dateFormatted}</em></p>
+		<p class="leading-4 text-sm ml-2">{truncateString(message, 60)}</p>
 	</div>
 </div>
 
 <style>
-	img {
-		border-radius: 50%;
-		width: 40px;
-		height: 40px;
-	}
-	.commit-card {
-		/* border: 1px solid var(--headline);
-    border-radius: 1rem; */
-		padding: 1rem;
-		margin: 1rem 0.5rem;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		position: relative;
-	}
-	.line {
-		position: absolute;
-		width: 12px;
-		height: 2px;
-		background-color: var(--paragraph);
-		position: absolute;
-		left: -10px;
-	}
-	.commit {
-		line-height: 1;
-		font-size: 0.8rem;
-		margin-left: 0.5rem;
-	}
-	.commit-date {
-		color: var(--headline);
-	}
 </style>

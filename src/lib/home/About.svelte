@@ -1,12 +1,12 @@
 <script lang="ts">
 </script>
 
-<section class="section" id="about">
-	<div class="container">
-		<div class="bio">
-			<div class="about-me">
-				<h2>Who am I?</h2>
-				<p>
+<section class="bg-bgSecondary" id="about">
+	<div class="w-4/5 max-w-5xl mx-auto">
+		<div class="flex justify-center items-start">
+			<div class="mr-12">
+				<h2 class="">Who am I?</h2>
+				<p class="leading-relaxed my-4">
 					Hello! 👋 My name is Tyler, a software engineer from Texas. I love creating small,
 					(hopefully) useful side projects so they can exist somewhere other than in my head. I have
 					a passion for learning about technology old and new. Usually by creating small apps.
@@ -16,12 +16,11 @@
 					dog named Evee (like the Pokemon) and enjoy reading books.
 				</p>
 			</div>
-			<div class="me-image">
-				<img
-					alt="The author"
-					src="https://www.datocms-assets.com/60736/1641673916-portfolio_picture.png"
-				/>
-			</div>
+			<img
+				class="w-2/4"
+				alt="The author"
+				src="https://www.datocms-assets.com/60736/1641673916-portfolio_picture.png"
+			/>
 		</div>
 		<div class="other-projects">
 			<!-- Other stuff here -->
@@ -30,7 +29,7 @@
 </section>
 
 <style>
-	#about {
+	/* #about {
 		background-color: var(--background-secondary);
 	}
 	p {
@@ -62,5 +61,5 @@
 		img {
 			width: 100%;
 		}
-	}
+	} */
 </style>

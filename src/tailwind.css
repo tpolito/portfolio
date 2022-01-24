@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-bg m-0 p-0 text-base;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	@apply text-headline font-bold;
+}
+
+h2 {
+	@apply text-headline text-5xl font-bold;
+}
+
+p {
+	@apply text-paragraph text-xl font-semibold;
+}
+
+button {
+	@apply h-10 w-48 bg-primary text-headline font-bold border-r-4 cursor-pointer border-none transition-all;
+}
+
+section {
+	@apply p-32 px-0;
+}

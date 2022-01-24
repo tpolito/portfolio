@@ -10,6 +10,7 @@
 	import { initClient } from '@urql/svelte';
 	import { variables } from '../utils';
 	import PageTransition from '../lib/ui/animations/PageTransition.svelte';
+	import '../tailwind.css';
 
 	export let key;
 
@@ -39,7 +40,7 @@
 </svelte:head>
 
 <style>
-	:root {
+	/* :root {
 		--background: #16161a;
 		--background-secondary: #242629;
 		--headline: #fffffe;
@@ -96,10 +97,10 @@
 		background-color: var(--primary);
 		padding: 2px;
 		color: var(--headline);
-	}
+	} */
 
 	/* Need to add post styling to layout for some reason, doesn't work at the component level */
-	:global(.post) {
+	/* :global(.post) {
 		width: 50%;
 		padding: 2rem;
 		margin: 2rem auto;
@@ -133,5 +134,5 @@
 		padding: 1.5rem;
 		border-radius: 3px;
 		border-left: 4px solid var(--headline);
-	}
+	} */
 </style>

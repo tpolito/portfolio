@@ -15,7 +15,7 @@
 	random();
 </script>
 
-<span class="bg">
+<span class="bg-primary text-headline p-1">
 	{#key currentWord}
 		<span in:fade={{ delay: 150, duration: 700 }}>{currentWord}</span>
 	{/key}

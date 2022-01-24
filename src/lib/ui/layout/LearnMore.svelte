@@ -5,10 +5,10 @@
 	}
 </script>
 
-<p on:click={jumpDown}>👇 Learn more. 👇</p>
+<p on:click={jumpDown} class="cursor-pointer mt-auto animate-bounce">👇 Learn more. 👇</p>
 
 <style>
-	p {
+	/* p {
 		color: var(--paragraph);
 		font-size: 1.2rem;
 		cursor: pointer;
@@ -26,5 +26,5 @@
 		100% {
 			transform: translateY(0);
 		}
-	}
+	} */
 </style>

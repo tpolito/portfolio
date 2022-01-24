@@ -13,11 +13,11 @@
 	});
 </script>
 
-<div class="container {loading ? 'center' : null}">
+<div class="bg-bgSecondary rounded p-6 flex  {loading ? 'center' : null}">
 	{#if loading}
 		<Spinner />
 	{:else}
-		<div class="line" />
+		<div class="border-2 border-solid border-paragraph" />
 		<div>
 			{#each commits as commit}
 				<CommitCard commitData={commit} />
