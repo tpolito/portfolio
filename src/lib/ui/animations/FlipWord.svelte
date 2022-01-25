@@ -20,11 +20,3 @@
 		<span in:fade={{ delay: 150, duration: 700 }}>{currentWord}</span>
 	{/key}
 </span>
-
-<style>
-	.bg {
-		background-color: var(--primary);
-		color: var(--headline);
-		padding: 3px;
-	}
-</style>

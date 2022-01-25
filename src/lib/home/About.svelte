@@ -27,39 +27,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	/* #about {
-		background-color: var(--background-secondary);
-	}
-	p {
-		line-height: 1.8;
-	}
-	img {
-		width: 30rem;
-	}
-	.container {
-		width: 90%;
-		max-width: 1040px;
-		margin: 0 auto;
-	}
-	.bio {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-	}
-	.about-me {
-		margin-right: 3rem;
-	}
-	@media screen and (max-width: 900px) {
-		.bio {
-			flex-direction: column;
-		}
-		h2 {
-			text-align: center;
-		}
-		img {
-			width: 100%;
-		}
-	} */
-</style>

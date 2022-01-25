@@ -11,25 +11,3 @@
 		<p>{desc}</p>
 	</div>
 </a>
-
-<style>
-	/* h4 {
-		font-size: 1.5rem;
-		color: var(--headline);
-		margin: 0;
-	}
-	a {
-		text-decoration: none;
-	}
-	.card {
-		background-color: var(--background-secondary);
-		padding: 1.5rem;
-		border-radius: 3px;
-		cursor: pointer;
-		transition: 0.3s;
-		margin: 1rem 0;
-	}
-	.card:hover {
-		transform: translateY(-4px);
-	} */
-</style>

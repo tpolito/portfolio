@@ -25,27 +25,4 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-	/*
-	.container {
-		width: 90%;
-		max-width: 1040px;
-		margin: 0 auto;
-	}
-	.activity {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-	}
-	.project-cards {
-		margin-right: 3rem;
-	}
-	@media screen and (max-width: 900px) {
-		.project-cards {
-			padding-bottom: 1rem;
-			margin-right: 0;
-		}
-		h2 {
-			text-align: center;
-		}
-	} */
 </style>
