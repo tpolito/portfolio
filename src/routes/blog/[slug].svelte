@@ -36,6 +36,3 @@
 {:else}
 	<Post post={$post.data.blogPost.post} />
 {/if}
-
-<style>
-</style>

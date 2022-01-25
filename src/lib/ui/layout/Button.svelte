@@ -4,35 +4,8 @@
 	export let link = '/';
 </script>
 
-<a href={link} class="btn pull-{pull}">{text}</a>
-
-<style>
-	.btn {
-		text-decoration: none;
-		background-color: var(--primary);
-		text-align: center;
-		border-radius: 50%;
-		height: 4rem;
-		width: 4rem;
-		transition: 0.3s;
-		display: grid;
-		place-items: center;
-		color: var(--headline);
-	}
-
-	.btn:hover {
-		transform: translateY(-4px);
-	}
-
-	.pull-left {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
-	}
-
-	.pull-right {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-	}
-</style>
+<a
+	href={link}
+	class="bg-primary text-center rounded-full h-16 w-16 transition-all grid place-items-center text-headline absolute top-4 left-4 hover:-translate-y-1"
+	>{text}</a
+>

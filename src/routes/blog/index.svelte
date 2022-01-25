@@ -28,8 +28,8 @@
 	<html lang="en" />
 </svelte:head>
 
-<div id="feed">
-	<h1>Latest posts</h1>
+<div class="h-screen flex justify-center items-center p-0 flex-col" id="feed">
+	<h1 class="mb-4 text-5xl felx items-center text-center">Latest posts</h1>
 	{#if $posts.fetching}
 		<Spinner />
 	{:else if $posts.error}
@@ -39,7 +39,7 @@
 		{#each $posts.data.allBlogPosts as post}
 			<PostCard {post} />
 		{/each}
-		<a href="/blog/viewAll">View all</a>
+		<a class="text-headline" href="/blog/viewAll">View all</a>
 	{/if}
 </div>
 
@@ -49,21 +49,5 @@
 		background-image: url('../../assets/animated-shapes.svg');
 		background-repeat: no-repeat;
 		background-size: cover;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 0;
-		flex-direction: column;
-	}
-	h1 {
-		font-size: 3rem;
-		display: flex;
-		align-items: center;
-		text-align: center;
-	}
-
-	a {
-		color: var(--headline);
 	}
 </style>

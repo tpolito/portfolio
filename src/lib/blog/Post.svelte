@@ -9,6 +9,3 @@
 	<a href="/blog">Back to posts</a>
 	{@html markdown}
 </div>
-
-<style>
-</style>
