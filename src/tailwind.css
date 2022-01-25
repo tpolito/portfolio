@@ -37,11 +37,23 @@ section {
 }
 
 .post h3 {
-	@apply text-headline text-2xl my-3;
+	@apply text-headline text-2xl my-3 text-center underline;
+}
+
+.post p {
+	@apply mb-4;
+}
+
+.post li {
+	@apply my-4;
 }
 
 .post a {
-	@apply text-primary p-1 font-bold;
+	@apply text-primary p-1 font-bold transition-all;
+}
+
+.post a:hover {
+	@apply underline;
 }
 
 .post pre {

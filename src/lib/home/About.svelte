@@ -3,7 +3,7 @@
 
 <section class="bg-bgSecondary" id="about">
 	<div class="w-4/5 max-w-5xl mx-auto">
-		<div class="flex justify-center items-start">
+		<div class="flex flex-col  justify-center items-center sm:flex-row sm:items-start">
 			<div class="mr-12">
 				<h2 class="">Who am I?</h2>
 				<p class="leading-relaxed my-4">
