@@ -10,7 +10,7 @@
 	<h1 class="text-headline text-5xl flex items-center mt-auto mb-10 text-center">
 		Hi, I'm Tyler. A Fullstack Software Engineer.<BlinkingCursor />
 	</h1>
-	<h2 class="text-xl text-paragraph text-center">
+	<h2 class="text-xl text-paragraph text-center font-thin" id="sub-title">
 		I design and build software for people using <FlipWord
 			words={['Typescript', 'React', 'Node.js', 'Go', 'C#', 'Godot']}
 		/>

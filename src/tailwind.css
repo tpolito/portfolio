@@ -1,18 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat:wght@500&family=Roboto:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
 	@apply bg-bg m-0 p-0 text-base;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Courier Prime', monospace;
+	/* font-family: 'Montserrat', sans-serif; */
+	/* font-family: 'Roboto', sans-serif; */
 }
 
 h1 {
 	@apply text-headline font-bold;
+	font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
 	@apply text-headline text-5xl font-bold;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+	font-family: 'Montserrat', sans-serif;
 }
 
 p {
@@ -29,11 +42,11 @@ section {
 
 /* Blog Post Styling */
 .post {
-	@apply w-2/4 p-8 my-8 mx-auto bg-bgSecondary rounded text-paragraph text-lg;
+	@apply w-full md:w-3/4 p-8 my-8 mx-auto bg-bgSecondary rounded text-paragraph text-lg;
 }
 
 .post img {
-	@apply block mx-auto mb-4 w-11/12;
+	@apply block mx-auto mb-4 w-8/12;
 }
 
 .post h3 {
@@ -46,6 +59,10 @@ section {
 
 .post li {
 	@apply my-4;
+}
+
+.post strong {
+	@apply text-headline;
 }
 
 .post a {
@@ -70,4 +87,8 @@ section {
 
 .post code {
 	@apply bg-bg text-headline p-0.5 rounded;
+}
+
+#sub-title {
+	font-family: 'Courier Prime', monospace;
 }
