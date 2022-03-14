@@ -58,11 +58,7 @@ section {
 }
 
 .post li {
-	@apply my-4;
-}
-
-.post strong {
-	@apply text-headline;
+	@apply my-4 list-disc;
 }
 
 .post a {
