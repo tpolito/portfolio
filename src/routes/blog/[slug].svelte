@@ -11,7 +11,7 @@
 	import Spinner from '../../lib/ui/layout/Spinner.svelte';
 	import Post from '../../lib/blog/Post.svelte';
 
-	export let slug;
+	export let slug: string;
 
 	const postQuery = gql`
 		query Post($slug: String!) {
@@ -26,7 +26,6 @@
 	const post = operationStore(postQuery, { slug });
 
 	query(post);
-	console.log(post);
 </script>
 
 {#if $post.fetching}

@@ -5,9 +5,9 @@
 
 body {
 	@apply bg-bg m-0 p-0 text-base;
-	font-family: 'Courier Prime', monospace;
+	/* font-family: 'Courier Prime', monospace; */
 	/* font-family: 'Montserrat', sans-serif; */
-	/* font-family: 'Roboto', sans-serif; */
+	font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -40,9 +40,11 @@ section {
 	@apply p-32 px-0;
 }
 
-/* Blog Post Styling */
+/*
+* Blog Post Styling 
+*/
 .post {
-	@apply w-full md:w-3/4 p-8 my-8 mx-auto bg-bgSecondary rounded text-paragraph text-lg;
+	@apply w-full md:w-3/5 p-8 my-8 mx-auto rounded text-headline text-lg;
 }
 
 .post img {
@@ -50,15 +52,19 @@ section {
 }
 
 .post h3 {
-	@apply text-headline text-2xl my-3 text-center underline;
+	@apply text-primary text-3xl my-3; 
 }
 
 .post p {
-	@apply mb-4;
+	@apply mb-4 text-headline;
+}
+
+.post ol, .post ul {
+	@apply ml-8;
 }
 
 .post li {
-	@apply my-4 list-disc;
+	@apply my-4 list-disc
 }
 
 .post a {
@@ -70,19 +76,19 @@ section {
 }
 
 .post pre {
-	@apply bg-bg p-3 rounded my-2;
+	@apply bg-bgSecondary p-3 rounded my-2;
 }
 
 .post blockquote {
-	@apply bg-bg p-6 rounded border-l-4 my-2 text-headline;
+	@apply p-6 rounded border-primary border-l-4 my-4 italic;
 }
 
 .post blockquote p {
-	@apply text-headline;
+	@apply text-paragraph;
 }
 
 .post code {
-	@apply bg-bg text-headline p-0.5 rounded;
+	@apply bg-bgSecondary text-headline p-0.5 rounded;
 }
 
 #sub-title {
