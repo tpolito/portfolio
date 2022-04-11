@@ -26,6 +26,7 @@
 	const post = operationStore(postQuery, { slug });
 
 	query(post);
+	console.log(post);
 </script>
 
 {#if $post.fetching}

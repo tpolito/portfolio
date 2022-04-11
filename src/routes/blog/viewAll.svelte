@@ -11,7 +11,7 @@
 				title
 				_status
 				published
-				_updatedAt
+				updatedAt
 				slug
 				description
 			}
@@ -28,8 +28,8 @@
 	<html lang="en" />
 </svelte:head>
 
-<div class="h-screen flex justify-center items-center p-0 flex-col" id="feed">
-	<h1 class="mb-4 text-5xl felx items-center text-center">All Posts</h1>
+<div class="flex justify-center items-center p-0 flex-col" id="feed">
+	<h1 class="my-4 text-5xl felx items-center text-center">All Posts</h1>
 	{#if $posts.fetching}
 		<Spinner />
 	{:else if $posts.error}

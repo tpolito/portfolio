@@ -8,7 +8,7 @@
 			Feel free to <a href="mailto: hire@tpolito.com" class="p-1 bg-primary text-headline"
 				>send me an email
 			</a>or send me a message on Discord
-			<span class="highlight">Tyler#1074</span>.
+			<span class="p-1 bg-primary text-headline">Tyler#1074</span>.
 		</p>
 	</div>
 </section>

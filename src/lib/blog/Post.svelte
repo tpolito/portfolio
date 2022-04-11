@@ -2,7 +2,6 @@
 	import Button from '$lib/ui/layout/Button.svelte';
 	import { marked } from 'marked';
 	export let post: string;
-
 	let markdown = marked.parse(post);
 </script>
 

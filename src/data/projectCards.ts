@@ -1,9 +1,9 @@
 // This should probably be
 export const projectCards = [
 	{
-		link: 'https://github.com/tpolito/ror2-graphql',
-		title: 'Risk of Rain API',
-		desc: 'A GraphQL API for Risk of Rain 2'
+		link: 'https://github.com/tpolito/hn-ezread',
+		title: 'Hacker News EzRead',
+		desc: 'A cleaner way to read Hacker News while remaining fast and accessible.'
 	},
 	{
 		link: 'https://dndtoolkit.app/',

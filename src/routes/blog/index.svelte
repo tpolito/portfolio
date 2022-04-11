@@ -11,7 +11,7 @@
 				title
 				_status
 				published
-				_updatedAt
+				updatedAt
 				slug
 				description
 			}
