@@ -6,13 +6,13 @@ export const projectCards = [
 		desc: 'A cleaner way to read Hacker News while remaining fast and accessible.'
 	},
 	{
-		link: 'https://dndtoolkit.app/',
-		title: 'DnD Toolkit',
-		desc: 'A light-weight digital toolset for Dungeons and Dragons'
-	},
-	{
 		link: '/blog',
 		title: 'Blog',
 		desc: 'A blog that focuses on web and game development.'
+	},
+	{
+		link: 'https://dndtoolkit.app/',
+		title: 'DnD Toolkit',
+		desc: 'A light-weight digital toolset for Dungeons and Dragons'
 	}
 ];

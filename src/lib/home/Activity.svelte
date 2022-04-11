@@ -7,13 +7,16 @@
 <section id="activity">
 	<div class="w-11/12 max-w-5xl mx-auto">
 		<div class="flex justify-center items-center sm:items-start">
-			<div class="mr-12">
+			<div class="sm:mr-12">
 				<h2>What I'm working on</h2>
 				{#each projectCards as card}
 					<ProjectCard link={card.link} title={card.title} desc={card.desc} />
 				{/each}
 			</div>
-			<GithubFeed />
+			<div class="hidden sm:flex flex-col justify-center items-center">
+				<h2 class="mb-4">Github Feed</h2>
+				<GithubFeed />
+			</div>
 		</div>
 	</div>
 </section>

@@ -13,7 +13,7 @@
 	});
 </script>
 
-<div class="bg-bgSecondary rounded p-6 hidden {loading ? 'center' : null} sm:flex">
+<div class="bg-bgSecondary rounded p-6 hidden {loading ? 'center' : null} sm:flex ">
 	{#if loading}
 		<Spinner />
 	{:else}
