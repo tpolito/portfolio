@@ -14,7 +14,7 @@
 				{/each}
 			</div>
 			<div class="hidden sm:flex flex-col justify-center items-center">
-				<h2 class="mb-4">Github Feed</h2>
+				<h2 class="mb-4">Github feed</h2>
 				<GithubFeed />
 			</div>
 		</div>
