@@ -5,8 +5,6 @@
 
 body {
 	@apply bg-bg m-0 p-0 text-base;
-	/* font-family: 'Courier Prime', monospace; */
-	/* font-family: 'Montserrat', sans-serif; */
 	font-family: 'Roboto', sans-serif;
 }
 
