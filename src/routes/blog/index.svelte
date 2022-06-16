@@ -28,19 +28,21 @@
 	<html lang="en" />
 </svelte:head>
 
-<div class="h-screen flex justify-center items-center p-0 flex-col" id="feed">
-	<h1 class="mb-4 text-5xl felx items-center text-center">Latest posts</h1>
-	{#if $posts.fetching}
-		<Spinner />
-	{:else if $posts.error}
-		<p>An error</p>
-	{:else}
-		<Button text="Home" />
-		{#each $posts.data.allBlogPosts as post}
-			<PostCard {post} />
-		{/each}
-		<a class="text-headline" href="/blog/viewAll">View all</a>
-	{/if}
+<div class="h-screen" id="feed">
+	<div class="flex justify-center items-center p-0 flex-col">
+		<h1 class="my-4 text-5xl felx items-center text-center">Latest posts</h1>
+		{#if $posts.fetching}
+			<Spinner />
+		{:else if $posts.error}
+			<p>An error</p>
+		{:else}
+			<Button text="Home" />
+			{#each $posts.data.allBlogPosts as post}
+				<PostCard {post} />
+			{/each}
+			<a class="text-headline" href="/blog/viewAll">View all</a>
+		{/if}
+	</div>
 </div>
 
 <style>
