@@ -12,8 +12,7 @@
 					a passion for learning about technology old and new. Usually by creating small apps.
 				</p>
 				<p>
-					Outside the realm of technology I am an avid rockclimber, and love the outdoors. I have a
-					dog named Evee (like the Pokemon) and enjoy reading books.
+				  Outside the realm of technology I am an avid rockclimber, and love the outdoors. I have two dogs named Evee (like the Pokemon) and Roxy. I also enjoy reading fantasy books and games.
 				</p>
 			</div>
 			<img
