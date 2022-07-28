@@ -2,7 +2,6 @@
 	import { gql, operationStore, query } from '@urql/svelte';
 	import PostCard from '../../lib/ui/layout/PostCard.svelte';
 	import Spinner from '../../lib/ui/layout/Spinner.svelte';
-	import Button from '../../lib/ui/layout/Button.svelte';
 
 	const recentPostQuery = gql`
 		query {
@@ -35,7 +34,6 @@
 	{:else if $posts.error}
 		<p>An error</p>
 	{:else}
-		<Button text="Back" link="/blog" />
 		{#each $posts.data.allBlogPosts as post}
 			<PostCard {post} />
 		{/each}

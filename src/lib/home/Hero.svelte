@@ -2,11 +2,9 @@
 	import FlipWord from '../ui/animations/FlipWord.svelte';
 	import BlinkingCursor from '../ui/animations/BlinkingCursor.svelte';
 	import LearnMore from '../ui/layout/LearnMore.svelte';
-	import Button from '../ui/layout/Button.svelte';
 </script>
 
-<section class="bg-bg h-screen flex justify-center items-center p-0 flex-col" id="hero">
-	<Button pull={'right'} text="Blog" link="/blog" />
+<section class="bg-bg h-[calc(100vh-52px)] flex justify-center items-center p-0 flex-col" id="hero">
 	<h1 class="text-headline text-5xl flex items-center mt-auto mb-10 text-center">
 		Hi, I'm Tyler. A Fullstack Software Engineer.<BlinkingCursor />
 	</h1>

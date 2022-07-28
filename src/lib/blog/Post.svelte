@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from '$lib/ui/layout/Button.svelte';
 	import hljs from 'highlight.js';
 	import { marked } from 'marked';
 	export let post: string;
@@ -23,7 +22,6 @@
 	/>
 </svelte:head>
 
-<Button link="/blog" text="Back" />
 <div class="post">
 	{@html markdown}
 </div>

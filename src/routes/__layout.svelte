@@ -10,6 +10,7 @@
 	import { initClient } from '@urql/svelte';
 	import { variables } from '../utils';
 	import PageTransition from '../lib/ui/animations/PageTransition.svelte';
+	import Navbar from '$lib/ui/layout/Navbar.svelte';
 	import '../tailwind.css';
 
 	export let key;
@@ -28,6 +29,7 @@
 </script>
 
 <PageTransition refresh={key}>
+	<Navbar />
 	<slot />
 </PageTransition>
 

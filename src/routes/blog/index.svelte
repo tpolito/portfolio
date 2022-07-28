@@ -2,7 +2,6 @@
 	import { gql, operationStore, query } from '@urql/svelte';
 	import PostCard from '../../lib/ui/layout/PostCard.svelte';
 	import Spinner from '../../lib/ui/layout/Spinner.svelte';
-	import Button from '../../lib/ui/layout/Button.svelte';
 
 	const recentPostQuery = gql`
 		query {
@@ -28,7 +27,7 @@
 	<html lang="en" />
 </svelte:head>
 
-<div class="h-screen" id="feed">
+<main class="h-screen" id="feed">
 	<div class="flex justify-center items-center p-0 flex-col">
 		<h1 class="my-4 text-5xl felx items-center text-center">Latest posts</h1>
 		{#if $posts.fetching}
@@ -36,14 +35,13 @@
 		{:else if $posts.error}
 			<p>An error</p>
 		{:else}
-			<Button text="Home" />
 			{#each $posts.data.allBlogPosts as post}
 				<PostCard {post} />
 			{/each}
 			<a class="text-headline" href="/blog/viewAll">View all</a>
 		{/if}
 	</div>
-</div>
+</main>
 
 <style>
 	#feed {
