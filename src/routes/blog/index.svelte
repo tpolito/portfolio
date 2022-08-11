@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { gql, operationStore, query } from '@urql/svelte';
-	import PostCard from '../../lib/ui/layout/PostCard.svelte';
-	import Spinner from '../../lib/ui/layout/Spinner.svelte';
+	import PostCard from '$lib/ui/layout/PostCard.svelte';
+	import Spinner from '$lib/ui/layout/Spinner.svelte';
 
 	const recentPostQuery = gql`
 		query {
