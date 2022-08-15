@@ -16,7 +16,7 @@
 </script>
 
 <nav class="border-b-2 border-b-primary sticky">
-	<ul class="flex flex-row pl-16 py-3">
+	<ul class="flex flex-row justify-center py-3 w-full">
 		{#each navItems as navItem}
 			<li class="list-none mx-2">
 				<a

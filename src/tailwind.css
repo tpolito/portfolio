@@ -34,15 +34,12 @@ button {
 	@apply h-10 w-48 bg-primary text-headline font-bold border-r-4 cursor-pointer border-none transition-all;
 }
 
-section {
-	@apply p-32 px-0;
-}
 
 /*
 * Blog Post Styling 
 */
 .post {
-	@apply w-full md:w-3/5 p-8 my-8 mx-auto rounded text-headline text-lg;
+	@apply w-full md:w-3/5 p-8 mt-8 mx-auto rounded text-headline text-lg;
 }
 
 .post img {

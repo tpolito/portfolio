@@ -12,6 +12,7 @@
 	import PageTransition from '../lib/ui/animations/PageTransition.svelte';
 	import Navbar from '$lib/ui/layout/Navbar.svelte';
 	import '../tailwind.css';
+	import Footer from '$lib/home/Footer.svelte';
 
 	export let key;
 
@@ -28,10 +29,8 @@
 	});
 </script>
 
-<PageTransition refresh={key}>
-	<Navbar />
-	<slot />
-</PageTransition>
+<Navbar />
+<slot />
 
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
