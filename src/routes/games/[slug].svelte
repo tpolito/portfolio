@@ -13,9 +13,9 @@
 
 	export let slug: string;
 
-	const postQuery = gql`
-		query Post($slug: String!) {
-			blogPost(filter: { slug: { eq: $slug } }) {
+	const gamePostQuery = gql`
+		query GamePost($slug: String!) {
+			gamePost(filter: { slug: { eq: $slug } }) {
 				id
 				title
 				post
@@ -25,7 +25,7 @@
 		}
 	`;
 
-	const post = operationStore(postQuery, { slug });
+	const post = operationStore(gamePostQuery, { slug });
 
 	query(post);
 </script>
@@ -36,8 +36,8 @@
 	<p>An error</p>
 {:else}
 	<Post
-		post={$post.data.blogPost.post}
-		updatedAt={$post.data.blogPost._updatedAt}
-		publishedAt={$post.data.blogPost._firstPublishedAt}
+		post={$post.data.gamePost.post}
+		updatedAt={$post.data.gamePost._updatedAt}
+		publishedAt={$post.data.gamePost._firstPublishedAt}
 	/>
 {/if}

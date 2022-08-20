@@ -5,10 +5,6 @@
 			href: '/'
 		},
 		{
-			name: 'Blog',
-			href: '/blog'
-		},
-		{
 			name: 'Games',
 			href: '/games'
 		}

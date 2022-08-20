@@ -31,6 +31,7 @@
 
 <Navbar />
 <slot />
+<Footer />
 
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />

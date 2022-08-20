@@ -6,12 +6,12 @@
 
 	const recentPostQuery = gql`
 		query {
-			allBlogPosts(orderBy: published_DESC) {
+			allBlogPosts(orderBy: _firstPublishedAt_DESC) {
 				id
 				title
 				_status
-				published
-				updatedAt
+				_firstPublishedAt
+				_updatedAt
 				slug
 				description
 			}
@@ -38,7 +38,7 @@
 		</h1>
 	</section>
 
-	<section class="flex justify-center items-center p-0 flex-col">
+	<section class="flex items-center p-0 flex-col min-h-screen">
 		<h3 class="my-4 text-3xl felx items-center text-center text-headline">Latest posts</h3>
 		{#if $posts.fetching}
 			<Spinner />
@@ -46,7 +46,7 @@
 			<p>An error</p>
 		{:else}
 			{#each $posts.data.allBlogPosts as post}
-				<PostCard {post} />
+				<PostCard {post} ref="blog" />
 			{/each}
 		{/if}
 	</section>
