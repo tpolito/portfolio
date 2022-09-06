@@ -41,7 +41,9 @@
 
 <main class="h-full" id="home">
 	<section class="flex flex-col items-center pt-8">
-		<h1 class="text-headline text-4xl flex items-center mt-auto mb-10 text-center">
+		<h1
+			class="text-headline text-4xl flex flex-col lg:flex-row items-center mt-auto mb-10 text-center"
+		>
 			{#if $currentGame.fetching}
 				Currently Playing:
 			{:else if $currentGame.error}
