@@ -1,0 +1,43 @@
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <!-- <li>About Me</li>
+    <li>Projects</li> -->
+  </ul>
+</nav>
+
+<style>
+  nav {
+    background-color: var(--bg-tint);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--purple-tint);
+    margin-bottom: 2.4rem;
+    position: sticky;
+  }
+
+  ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  li {
+    list-style: none;
+    padding: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: var(--font-fira);
+    color: var(--text-light);
+  }
+
+  a:hover {
+    color: var(--purple);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>

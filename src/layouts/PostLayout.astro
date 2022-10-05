@@ -1,0 +1,101 @@
+---
+import '../styles/globals.css';
+import type { MarkdownLayoutProps } from 'astro';
+import Navbar from '../components/Navbar.astro';
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  author: string;
+  date: string;
+}>;
+
+const { frontmatter } = Astro.props;
+---
+
+<html>
+  <head>
+    <title>{frontmatter.title}</title>
+  </head>
+
+  <body>
+    <Navbar />
+    <div class="container">
+      <h1>{frontmatter.title}</h1>
+      <slot />
+      <p>{frontmatter.date}</p>
+    </div>
+
+    <style>
+      body {
+        background: var(--bg);
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-family: var(--font-fira);
+        color: var(--purple);
+        text-decoration: underline;
+      }
+
+      /* Have to use global because of how astro renders */
+      .container :global(*) {
+        font-family: var(--font-roboto);
+        line-height: 1.4rem;
+      }
+
+      .container :global(h3, h2) {
+        color: var(--purple);
+        font-family: var(--font-roboto);
+      }
+
+      .container :global(p) {
+        color: var(--text-light);
+        font-family: var(--font-roboto);
+      }
+
+      .container :global(li) {
+        margin: 0.5rem 0;
+      }
+
+      .container :global(a) {
+        color: var(--purple-tint);
+        text-decoration: none;
+      }
+
+      .container :global(a:hover) {
+        text-decoration: underline;
+      }
+
+      .container :global(blockquote) {
+        border-left: 4px solid var(--purple);
+        border-radius: 4px;
+        padding: 0.2rem 0rem 0.2rem 1rem;
+        color: var(--text-light);
+        background-color: var(--bg-tint);
+      }
+
+      .container :global(pre) {
+        border-radius: 4px;
+        padding: 1rem;
+      }
+
+      .container :global(pre code) {
+        background-color: var(--bg-code);
+      }
+
+      .container :global(code) {
+        background-color: var(--bg-tint);
+        padding: 2px;
+        border-radius: 4px;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: var(--content-width);
+        max-height: 100vh;
+        color: var(--text-light);
+        position: relative;
+      }
+    </style>
+  </body>
+</html>

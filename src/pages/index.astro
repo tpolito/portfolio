@@ -1,0 +1,40 @@
+---
+import '../styles/globals.css';
+import PostCard from '../components/PostCard.astro';
+import PostContainerTimeline from '../components/PostContainerTimeline.astro';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const posts = await Astro.glob('./blog/*.md');
+const nonDraftPosts = posts
+  .filter((post) => !post.frontmatter.draft)
+  .sort((a, b) => {
+    // @ts-ignore
+    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+  });
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <div class="container">
+      <Header />
+      <PostContainerTimeline>
+        {
+          nonDraftPosts.map((post) => {
+            const { url } = post;
+            const { date, title, tag } = post.frontmatter;
+            return <PostCard date={date} title={title} tag={tag} url={url} />;
+          })
+        }
+      </PostContainerTimeline>
+      <ul role="list" class="link-card-grid"></ul>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    margin: 0 auto;
+    max-width: var(--content-width);
+  }
+</style>
