@@ -1,0 +1,30 @@
+<script lang="ts">
+	export let image: string;
+	export let caption: string;
+</script>
+
+<div class="image-container">
+	<div class="image" alt={caption} style="background-image: url({image});" />
+</div>
+{#if caption}
+	<p>{caption}</p>
+{/if}
+
+<style>
+	.image-container {
+		height: 500px;
+	}
+
+	.image {
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+		height: 100%;
+	}
+
+	p {
+		color: var(--text);
+		text-align: center;
+		font-size: 14px;
+	}
+</style>

@@ -5,8 +5,9 @@ import PostContainerTimeline from '../components/PostContainerTimeline.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
-const posts = await Astro.glob('./blog/*.md');
-const nonDraftPosts = posts
+const mdPosts = await Astro.glob('./blog/*.md');
+const mdxPosts = await Astro.glob('./blog/*.mdx');
+const nonDraftPosts = [...mdPosts, ...mdxPosts] 
 	.filter((post) => !post.frontmatter.draft)
 	.sort((a, b) => {
 		// @ts-ignore
