@@ -7,7 +7,7 @@ import Header from '../components/Header.astro';
 
 const mdPosts = await Astro.glob('./blog/*.md');
 const mdxPosts = await Astro.glob('./blog/*.mdx');
-const nonDraftPosts = [...mdPosts, ...mdxPosts] 
+const nonDraftPosts = [...mdxPosts, ...mdPosts]
 	.filter((post) => !post.frontmatter.draft)
 	.sort((a, b) => {
 		// @ts-ignore
