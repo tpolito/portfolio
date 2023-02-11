@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: 'My Blog's Journey'
+title: 'My Blog Journey'
 author: 'Tyler Polito'
-date: '10 Oct 2022'
-updated: '10 Oct 2022'
-tag: 'Web Dev'
+date: '06 Jan 2022'
+updated: '21 Feb 2022'
+tag: 'Web Dev | Personal'
 draft: true
 ---
 

@@ -4,7 +4,7 @@
 </script>
 
 <div class="image-container">
-	<div class="image" alt={caption} style="background-image: url({image});" />
+	<div class="image" style="background-image: url({image});" />
 </div>
 {#if caption}
 	<p>{caption}</p>
