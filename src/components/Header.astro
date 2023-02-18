@@ -1,48 +1,52 @@
-<h1>Hello there, I'm Tyler 👋</h1>
-<div class="sub-heading">
-  <p>
-    I am a software enginneer and game developer who loves to write about
-    software engineering, games, and other hobbies.
-  </p>
+---
+interface Props {
+	title?: string;
+	subtitle?: string;
+}
 
-  <!-- <p>
-    Feel free to checkout <a href="/working-on">what I'm working on</a>, or the <a
-      href="/"
-      >posts
-    </a>I've written.
-  </p> -->
+const {
+	title = "Hello there, I'm Tyler 👋",
+	subtitle = 'I am a software enginneer and game developer who loves to write about software engineering, games, and other hobbies.'
+} = Astro.props;
+---
+
+<h1>{title}</h1>
+<div class="sub-heading">
+	<p>
+		{subtitle}
+	</p>
 </div>
 
 <style>
-  h1 {
-    color: var(--text-light);
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: var(--font-roboto);
-    line-height: 1.2;
-    margin: 0;
-    padding: 0;
-  }
+	h1 {
+		color: var(--text-light);
+		font-size: 3rem;
+		font-weight: 700;
+		font-family: var(--font-roboto);
+		line-height: 1.2;
+		margin: 0;
+		padding: 0;
+	}
 
-  .sub-heading {
-    margin-bottom: 3.5rem;
-  }
+	.sub-heading {
+		margin-bottom: 3.5rem;
+	}
 
-  p {
-    color: var(--text-light);
-    font-size: 1.5rem;
-    font-family: var(--font-roboto);
-  }
+	p {
+		color: var(--text-light);
+		font-size: 1.5rem;
+		font-family: var(--font-roboto);
+	}
 
-  a {
-    color: var(--purple-tint);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-family: var(--font-roboto);
-  }
+	a {
+		color: var(--purple-tint);
+		text-decoration: none;
+		font-size: 1.5rem;
+		font-family: var(--font-roboto);
+	}
 
-  a:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+	a:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
 </style>

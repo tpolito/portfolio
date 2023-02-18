@@ -1,7 +1,6 @@
 ---
-import '../styles/globals.css';
 import PostCard from '../components/PostCard.astro';
-import PostContainerTimeline from '../components/PostContainerTimeline.astro';
+import PostContainerTimeline from '../components/containers/PostContainerTimeline.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
@@ -15,7 +14,7 @@ const nonDraftPosts = [...mdxPosts, ...mdPosts]
 	});
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Home Page - Blog">
 	<main>
 		<div class="container">
 			<Header />
