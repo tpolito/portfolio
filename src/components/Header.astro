@@ -1,5 +1,6 @@
-
 ---
+import { divider } from 'styled-system/patterns';
+import { css } from 'styled-system/css';
 interface Props {
 	title?: string;
 	subtitle?: string;
@@ -11,43 +12,28 @@ const {
 } = Astro.props;
 ---
 
-<h1>{title}</h1>
-<div class="sub-heading">
-	<p>
+<h1
+	class={css({
+		color: 'textLight',
+		fontSize: '3rem',
+		fontWeight: 700,
+		fontFamily: 'roboto',
+		lineHeight: 1.2,
+		margin: 0,
+		padding: 0
+	})}
+>
+	{title}
+</h1>
+<div>
+	<p
+		class={css({
+			color: 'textLight',
+			fontSize: '1.5rem',
+			fontFamily: 'roboto'
+		})}
+	>
 		{subtitle}
 	</p>
 </div>
-
-<style>
-	h1 {
-		color: var(--text-light);
-		font-size: 3rem;
-		font-weight: 700;
-		font-family: var(--font-roboto);
-		line-height: 1.2;
-		margin: 0;
-		padding: 0;
-	}
-
-	.sub-heading {
-		margin-bottom: 3.5rem;
-	}
-
-	p {
-		color: var(--text-light);
-		font-size: 1.5rem;
-		font-family: var(--font-roboto);
-	}
-
-	a {
-		color: var(--purple-tint);
-		text-decoration: none;
-		font-size: 1.5rem;
-		font-family: var(--font-roboto);
-	}
-
-	a:hover {
-		text-decoration: underline;
-		cursor: pointer;
-	}
-</style>
+<div class={divider({ color: 'purple', my: '2rem' })}></div>

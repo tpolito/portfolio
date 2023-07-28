@@ -1,0 +1,11 @@
+---
+// import { vstack } from 'styled-system/patterns';
+import { css } from 'styled-system/css';
+---
+
+<h2 class={css({ color: 'purple', fontFamily: 'robotoSlab', fontSize: '1.5rem', mb: '1.2rem' })}>
+	Posts
+</h2>
+<div class={css({ display: 'flex', flexDirection: 'column' })}>
+	<slot />
+</div>

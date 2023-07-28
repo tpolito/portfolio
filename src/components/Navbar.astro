@@ -1,41 +1,39 @@
-<nav>
-	<ul>
-		<li><a href="/">Home</a></li>
+---
+import { css } from 'styled-system/css';
+import { flex } from 'styled-system/patterns';
+---
+
+<nav
+	class={flex({
+		backgroundColor: 'bgTint',
+		justify: 'center',
+		borderBottomWidth: '2px',
+		borderColor: 'purpleTint',
+		mb: '2.4rem',
+		position: 'sticky'
+	})}
+>
+	<ul
+		class={flex({
+			direction: 'row',
+			align: 'center',
+			m: 0
+		})}
+	>
+		<li class={css({ p: '1rem' })}>
+			<a
+				class={css({
+					fontSize: '1rem',
+					fontFamily: 'fira',
+					color: 'textLight',
+					'&:hover': {
+						color: 'purple',
+						textDecoration: 'underline',
+						cursor: 'pointer'
+					}
+				})}
+				href="/">Home</a
+			>
+		</li>
 	</ul>
 </nav>
-
-<style>
-	nav {
-		background-color: var(--bg-tint);
-		display: flex;
-		justify-content: center;
-		border-bottom: 1px solid var(--purple-tint);
-		margin-bottom: 2.4rem;
-		position: sticky;
-	}
-
-	ul {
-		margin: 0;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
-
-	li {
-		list-style: none;
-		padding: 1rem;
-	}
-
-	a {
-		text-decoration: none;
-		font-size: 1rem;
-		font-family: var(--font-fira);
-		color: var(--text-light);
-	}
-
-	a:hover {
-		color: var(--purple);
-		text-decoration: underline;
-		cursor: pointer;
-	}
-</style>

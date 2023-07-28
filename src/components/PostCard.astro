@@ -1,75 +1,58 @@
 ---
+import { css } from 'styled-system/css';
 interface Props {
-  date: Date;
-  title: string;
-  url: string;
-  tag?: string;
+	date: Date;
+	title: string;
+	url: string;
+	tag?: string;
 }
 const { date, title, url, tag } = Astro.props;
 ---
 
-<div class="post-card">
-  <time>{date}</time>
-  <a class="post-title" href={url}>{title}</a>
-  <div class="timeline-item"></div>
+<div
+	class={css({
+		padding: '1rem 1.5rem 3rem 1.5rem',
+		position: 'relative',
+		display: 'flex',
+		flexDirection: 'column',
+		borderLeftWidth: '2px',
+		borderColor: 'purple'
+	})}
+>
+	<time
+		class={css({
+			color: 'purple',
+			fontSize: '14px',
+			fontFamily: 'fira'
+		})}>{date}</time
+	>
+	<a
+		class={css({
+			p: 0,
+			fontSize: '18px',
+			fontFamily: 'roboto',
+			m: '0.5rem 0',
+			color: 'textLight',
+			textDecoration: 'none',
+			'&:hover': {
+				cursor: 'pointer',
+				textDecoration: 'underline'
+			}
+		})}
+		href={url}>{title}</a
+	>
+	<div
+		class={css({
+			position: 'absolute',
+			left: '-13px',
+			top: '32px',
+			width: '24px',
+			height: '24px',
+			borderWidth: '3px',
+			borderRadius: '50%',
+			borderColor: 'bg',
+			backgroundColor: 'purple'
+		})}
+	>
+	</div>
 </div>
-
-<style>
-  .post-card {
-    /* background-color: var(--bg-tint); */
-    padding: 1rem 1.5rem 3rem 1.5rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border-left: 3px solid var(--purple);
-    margin-left: 14px;
-  }
-
-  .post-title {
-    padding: 0;
-    font-size: 18px;
-    font-family: var(--font-roboto);
-    margin: 0.5rem 0;
-    color: var(--text-light);
-    text-decoration: none;
-  }
-
-  .post-title:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  time {
-    color: var(--purple);
-    font-size: 14px;
-    font-family: var(--font-fira);
-  }
-
-  .tag-container {
-    bottom: 1rem;
-    left: 1.3rem;
-    position: absolute;
-  }
-
-  .tag-link {
-    color: var(--text);
-    font-size: 14px;
-    font-family: var(--font-fira);
-    text-decoration: underline;
-  }
-
-  .tag-link:hover {
-    color: var(--text-light);
-  }
-
-  .timeline-item {
-    position: absolute;
-    left: -14px;
-    top: 24px;
-    width: 20px;
-    height: 20px;
-    border: 3px solid var(--bg);
-    border-radius: 50%;
-    background-color: var(--purple);
-  }
-</style>

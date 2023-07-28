@@ -1,11 +1,20 @@
-import { defineConfig } from '@pandacss/dev';
+import { defineConfig, defineGlobalStyles } from '@pandacss/dev';
+
+const globalCss = defineGlobalStyles({
+	'html, body': {
+		backgroundColor: 'bg'
+	}
+});
 
 export default defineConfig({
 	// Whether to use css reset
 	preflight: true,
 
+	// Global styles
+	globalCss,
+
 	// Where to look for your css declarations
-	include: ['./src/**/*.{ts,tsx,js,jsx,astro}', './pages/**/*.{ts,tsx,js,jsx,astro}'],
+	include: ['./src/**/*.{ts,tsx,js,jsx,astro}'],
 
 	// Files to exclude
 	exclude: [],

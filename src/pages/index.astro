@@ -1,8 +1,10 @@
 ---
 import PostCard from '../components/PostCard.astro';
-import PostContainerTimeline from '../components/containers/PostContainerTimeline.astro';
+import PostContainer from '../components/PostTimeline.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import { divider } from 'styled-system/patterns';
+import { css } from 'styled-system/css';
 
 const mdPosts = await Astro.glob('./blog/*.md');
 const mdxPosts = await Astro.glob('./blog/*.mdx');
@@ -15,31 +17,18 @@ const nonDraftPosts = [...mdxPosts, ...mdPosts]
 ---
 
 <Layout title="Home Page - Blog">
-	<main>
-		<div class="container">
-			<Header />
-			<PostContainerTimeline>
-				{
-					nonDraftPosts.map((post) => {
-						const { url } = post;
-						const { date, title, tag } = post.frontmatter;
-						return <PostCard date={date} title={title} tag={tag} url={url} />;
-					})
-				}
-			</PostContainerTimeline>
-			<ul role="list" class="link-card-grid"></ul>
-		</div>
-	</main>
-</Layout>
+	<div class={css({})}>
+		<Header />
 
-<style>
-	.container {
-		margin: 0 auto;
-		max-width: var(--content-width);
-	}
-	@media (max-width: 1060px) {
-		.container {
-			padding: 0 1rem;
-		}
-	}
-</style>
+		<PostContainer>
+			{
+				nonDraftPosts.map((post) => {
+					const { url } = post;
+					const { date, title, tag } = post.frontmatter;
+					return <PostCard date={date} title={title} tag={tag} url={url} />;
+				})
+			}
+		</PostContainer>
+		<ul role="list" class="link-card-grid"></ul>
+	</div>
+</Layout>
