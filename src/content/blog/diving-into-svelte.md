@@ -3,7 +3,7 @@ draft: false
 createdAt: 2021-06-19
 updatedAt: 2021-06-19
 title: Diving Into Svelte
-category: personal
+category: tech
 tag:
 ---
 
