@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: 'Vimifying VS Code'
-author: 'Tyler Polito'
-date: '29 Mar 2022'
-updated: '29 Mar 2022'
-tag: 'tech'
+draft: false
+createdAt: 2022-03-29
+updatedAt: 2022-03-29
+title: Vimifying VS Code
+category: personal
+tag:
 ---
 
 ### Why not just use Vim?

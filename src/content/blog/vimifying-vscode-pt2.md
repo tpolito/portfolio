@@ -1,11 +1,10 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: 'Vimifying VS Code Part 2'
-author: 'Tyler Polito'
-date: '29 Feb 2023'
-updated: '29 Mar 2022'
-tag: 'tech'
 draft: true
+createdAt: 2023-02-29
+updatedAt: 2023-02-29
+title: Vimifying VS Code Part 2
+category: tech
+tag:
 ---
 
 I [wrote about](./vimifying-vscode.md) the process of making VSCode feel like vim last year. Since that post I had another fling with a custom [Neovim setup](https://github.com/tpolito/nvim-config) and have been splitting my time between both pretty evenly. I will typcially use VSCode at my day job due to some extension specific tooling that is incredibly nice to have, and keep my system close to that of my co-workers. However, I have almost exclusivly been using Neovim at home and on personal projects.

@@ -1,0 +1,108 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import { css } from 'styled-system/css';
+import Layout from '@layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+
+	return posts.map((post) => {
+		return {
+			params: {
+				slug: post.slug
+			},
+			props: {
+				post
+			}
+		};
+	});
+}
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const postStyles = css({
+	fontFamily: 'roboto',
+	lineHeight: '1.4rem',
+	color: 'textLight',
+	padding: '16px',
+	'&  h2': {
+		color: 'purple',
+		fontSize: '1.5rem'
+	},
+	'&  h3': {
+		color: 'purple',
+		// TODO: Should fix all the posts with h3s insteadof h2s
+		fontSize: '1.5rem'
+	},
+	'&  p': {
+		my: '16px'
+	},
+	'&  li': {
+		margin: '0.5rem 0'
+	},
+	'&  a': {
+		color: 'purpleTint',
+		textDecoration: 'none',
+		'&:hover': {
+			textDecoration: 'underline'
+		}
+	},
+	'& blockquote': {
+		borderLeftWidth: '4px',
+		borderRadius: '4px',
+		p: '0.2rem 0rem 0.2rem 1rem',
+		color: 'textLight',
+		backgroundColor: 'bgTint'
+	},
+	'& pre': {
+		borderRadius: '4px',
+		p: '1rem'
+	},
+	'& pre code': {
+		backgroundColor: 'bgCode'
+	},
+	'& code': {
+		backgroundColor: 'bgTint',
+		borderRadius: '4px',
+		p: '0.2rem 0.4rem'
+	}
+});
+
+const { post } = Astro.props;
+const {
+	data: { createdAt, title }
+} = post;
+const { Content } = await post.render();
+---
+
+<Layout title={title}>
+	<div
+		class={css({
+			maxW: '40rem',
+			mx: 'auto'
+		})}
+	>
+		<h1
+			class={css({
+				color: 'purple',
+				fontSize: '2rem',
+				textDecoration: 'underline'
+			})}
+		>
+			{title}
+		</h1>
+		<p
+			class={css({
+				color: 'textLight'
+			})}
+		>
+			Posted on:
+			<time>{createdAt.toDateString()}</time>
+		</p>
+		<article class={postStyles}>
+			<Content />
+		</article>
+	</div>
+</Layout>

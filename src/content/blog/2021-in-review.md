@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: '2021 In Review'
-author: 'Tyler Polito'
-date: '01 Jan 2022'
-updated: '27 Jan 2022'
-tag: 'personal'
+draft: false
+createdAt: 2022-01-01
+updatedAt: 2022-01-27
+title: 2021 In Review
+category: personal
+tag:
 ---
 
 A lot has happened in 2021, and so I thought what better way to get all my thoughts about the year than write a blog post for it. So here is a quick rundown of the highlights and other things I can recall from 2021.

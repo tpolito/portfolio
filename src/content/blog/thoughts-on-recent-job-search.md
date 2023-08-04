@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: 'Thoughts On My Recent Job Search'
-author: 'Tyler Polito'
-date: '20 Jul 2022'
-updated: '9 Sep 2022'
-tag: 'personal'
+draft: false
+createdAt: 2022-07-20
+updatedAt: 2022-09-09
+title: Thoughts On My Recent Job Search
+category: personal
+tag:
 ---
 
 ### Thoughts On My Most Recent Job Search

@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: 'Diving Into Svelte'
-author: 'Tyler Polito'
-date: '19 Jun 2021'
-updated: '19 Jun 2021'
-tag: 'tech'
+draft: false
+createdAt: 2021-06-19
+updatedAt: 2021-06-19
+title: Diving Into Svelte
+category: personal
+tag:
 ---
 
 For those who don't know, I am currently working as a Frontend Engineer and I'm always keeping my eyes out for new technologies. Svelte has been on my radar for a while, but I haven't had the time to dive in and take a look. So I thought I'd document my process of learning about Svelte in comparison to (mostly) React. Which is the library I use day-to-day at work, and the one that most of my projects run on.

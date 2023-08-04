@@ -1,15 +1,11 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: '2022 In Review'
-author: 'Tyler Polito'
-date: 'Jan 10 2023'
-updated: 'Jan 10 2023'
-tag: 'personal'
+draft: false
+createdAt: 2023-01-10
+updatedAt: 2023-01-10
+title: 2022 In Review
+category: personal
+tag:
 ---
-
-import Image from '../../components/Image.svelte';
-import dogImg from '/assets/roxy_and_evee.jpg';
-import recapImg from '/assets/2022-recap-all.png';
 
 2022 was a huge year for me both personally and professionally. Like last year I wanted to write a blog post about my thoughts on the year, review my goals from last year, and plan my goals for 2023.
 
@@ -26,12 +22,8 @@ import recapImg from '/assets/2022-recap-all.png';
 
 Since it seems like every service under the sun is doing “Wraps” or “Recaps”, I thought I would add a few to this post.
 
-<Image image={recapImg} caption='Various "wrapped" images from this year' />
-
 Outside of those a ton of stuff happened this year. To start the year I took an incredible trip to Smith Rock in Oregon, where a friend and I got to multi-pitch for the very first time. This was an incredible experience and one that I’ve thought about a ton since. Shortly after that, my wife and I moved to Austin from Houston. Living in Austin has been an incredible change of pace, especially because outdoor rock climbing has become much more accessible. Since the weather has cooled down we have been able to go out and climb outside almost every weekend.
 After the move in late March, not too much happened until the summer, when I picked up my job search again. In early June we got a new dog named Roxy. For many reasons Roxy will go on to be the single biggest source of stress and joy I will experience for the rest of the year.
-
-<Image image={dogImg} caption="Roxy is on left. Evee is on right." />
 
 Honestly, after this point, the rest of the year flew by incredibly quickly. I started my new job on the first day of August, and have been loving it. My co-workers and manager are both amazing. The work is interesting, and I have the opportunity to learn a lot. I got into a groove working -> climbing -> working with the dogs -> playing games. August to November sped past me. It wasn’t until the holidays things started to slow down a bit.
 

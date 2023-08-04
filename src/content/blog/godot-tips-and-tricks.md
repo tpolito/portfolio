@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: 'Godot Tips & Tricks'
-author: 'Tyler Polito'
-date: '06 Jan 2022'
-updated: '21 Feb 2022'
-tag: 'tech'
+draft: false
+createdAt: 2022-01-06
+updatedAt: 2022-02-21
+title: Godot Tips & Tricks
+category: tech
+tag:
 ---
 
 The past few months I have been working on a new project built in Godot (more on that later). I have in that time spent quite a bit of time discovering and figuring out solutions to problems. This blog post will be a collection of useful tips, and I will keep these updated.

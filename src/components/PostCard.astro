@@ -1,13 +1,16 @@
 ---
 import { css } from 'styled-system/css';
-interface Props {
-	date: Date;
-	title: string;
-	url: string;
-	tag?: string;
-	draft?: boolean;
-}
-const { date, title, url, tag, draft } = Astro.props;
+import { CollectionEntry } from 'astro:content';
+
+type Props = {
+	post: CollectionEntry<'blog'>;
+};
+
+const { post } = Astro.props;
+const {
+	data: { category, createdAt, title, draft },
+	slug
+} = post;
 const dev = import.meta.env.MODE === 'development';
 ---
 
@@ -18,7 +21,7 @@ const dev = import.meta.env.MODE === 'development';
 		display: 'flex',
 		flexDirection: 'column',
 		borderLeftWidth: '2px',
-		borderColor: tag === 'personal' ? 'green' : 'purple'
+		borderColor: category === 'personal' ? 'green' : 'purple'
 	})}
 >
 	<time
@@ -26,7 +29,7 @@ const dev = import.meta.env.MODE === 'development';
 			color: 'purple',
 			fontSize: '14px',
 			fontFamily: 'fira'
-		})}>{date}</time
+		})}>{createdAt.toDateString()}</time
 	>
 	<a
 		class={css({
@@ -41,7 +44,8 @@ const dev = import.meta.env.MODE === 'development';
 				textDecoration: 'underline'
 			}
 		})}
-		href={url}>{title} {dev && draft && <span class={css({ color: 'red' })}>DRAFT</span>}</a
+		href={`/blog/${slug}`}
+		>{title} {dev && draft && <span class={css({ color: 'red' })}>DRAFT</span>}</a
 	>
 	<div
 		class={css({
@@ -53,7 +57,7 @@ const dev = import.meta.env.MODE === 'development';
 			borderWidth: '3px',
 			borderRadius: '50%',
 			borderColor: 'bg',
-			backgroundColor: tag === 'personal' ? 'green' : 'purple'
+			backgroundColor: category === 'personal' ? 'green' : 'purple'
 		})}
 	>
 	</div>

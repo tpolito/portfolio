@@ -1,39 +1,25 @@
 ---
+import { css } from 'styled-system/css';
+import { getCollection } from 'astro:content';
+import Header from '../components/Header.astro';
 import PostCard from '../components/PostCard.astro';
 import PostContainer from '../components/PostTimeline.astro';
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import { css } from 'styled-system/css';
+import Layout from '@layouts/Layout.astro';
 
-const mdPosts = await Astro.glob('./blog/*.md');
-const mdxPosts = await Astro.glob('./blog/*.mdx');
-
-const nonDraftPosts = [...mdxPosts, ...mdPosts]
-	.filter((post) => {
-		if (import.meta.env.MODE === 'development') return true;
-
-		return !post.frontmatter.draft;
-	})
-	.filter((post) => {
-		return true;
-	})
-	.sort((a, b) => {
-		return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
-	});
+const posts = await getCollection('blog', (post) => {
+	return import.meta.env.MODE !== 'production' || !post.data.draft;
+});
 ---
 
-<Layout title="Home Page - Blog">
+<Layout title="Blog - tpolito">
 	<div class={css({})}>
 		<Header />
 
 		<PostContainer>
 			{
-				nonDraftPosts.map((post) => {
-					const { url } = post;
-					const { date, title, tag, draft } = post.frontmatter;
-
-					return <PostCard date={date} title={title} tag={tag} url={url} draft={draft} />;
-				})
+				posts
+					.sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime())
+					.map((post) => <PostCard post={post} />)
 			}
 		</PostContainer>
 		<ul role="list" class="link-card-grid"></ul>

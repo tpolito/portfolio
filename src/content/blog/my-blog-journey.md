@@ -1,11 +1,10 @@
 ---
-layout: ../../layouts/PostLayout.astro
-title: 'My Blog Journey'
-author: 'Tyler Polito'
-date: '06 Jan 2022'
-updated: '21 Feb 2022'
-tag: 'tech'
 draft: true
+createdAt: 2022-01-06
+updatedAt: 2022-01-06
+title: My Blog Journey
+category: tech
+tag:
 ---
 
 Okay...so I remade my blog again. For better or worse, I have probably spent more time making and remaking this blog then I have actually writing for it. That being said I did it again. This time using [Astro](https://astro.build/). I thought it would be fun to write this post going through the history of the blog, and updating it each time I inevitibly remake it.
