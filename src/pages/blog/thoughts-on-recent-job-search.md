@@ -4,7 +4,7 @@ title: 'Thoughts On My Recent Job Search'
 author: 'Tyler Polito'
 date: '20 Jul 2022'
 updated: '9 Sep 2022'
-tag: 'Personal'
+tag: 'personal'
 ---
 
 ### Thoughts On My Most Recent Job Search

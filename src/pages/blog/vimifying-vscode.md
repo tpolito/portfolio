@@ -4,7 +4,7 @@ title: 'Vimifying VS Code'
 author: 'Tyler Polito'
 date: '29 Mar 2022'
 updated: '29 Mar 2022'
-tag: 'Productivity'
+tag: 'tech'
 ---
 
 ### Why not just use Vim?

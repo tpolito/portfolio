@@ -4,7 +4,7 @@ title: '2021 In Review'
 author: 'Tyler Polito'
 date: '01 Jan 2022'
 updated: '27 Jan 2022'
-tag: 'Personal'
+tag: 'personal'
 ---
 
 A lot has happened in 2021, and so I thought what better way to get all my thoughts about the year than write a blog post for it. So here is a quick rundown of the highlights and other things I can recall from 2021.

@@ -5,8 +5,10 @@ interface Props {
 	title: string;
 	url: string;
 	tag?: string;
+	draft?: boolean;
 }
-const { date, title, url, tag } = Astro.props;
+const { date, title, url, tag, draft } = Astro.props;
+const dev = import.meta.env.MODE === 'development';
 ---
 
 <div
@@ -16,7 +18,7 @@ const { date, title, url, tag } = Astro.props;
 		display: 'flex',
 		flexDirection: 'column',
 		borderLeftWidth: '2px',
-		borderColor: 'purple'
+		borderColor: tag === 'personal' ? 'green' : 'purple'
 	})}
 >
 	<time
@@ -39,7 +41,7 @@ const { date, title, url, tag } = Astro.props;
 				textDecoration: 'underline'
 			}
 		})}
-		href={url}>{title}</a
+		href={url}>{title} {dev && draft && <span class={css({ color: 'red' })}>DRAFT</span>}</a
 	>
 	<div
 		class={css({
@@ -51,7 +53,7 @@ const { date, title, url, tag } = Astro.props;
 			borderWidth: '3px',
 			borderRadius: '50%',
 			borderColor: 'bg',
-			backgroundColor: 'purple'
+			backgroundColor: tag === 'personal' ? 'green' : 'purple'
 		})}
 	>
 	</div>

@@ -3,16 +3,22 @@ import PostCard from '../components/PostCard.astro';
 import PostContainer from '../components/PostTimeline.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import { divider } from 'styled-system/patterns';
 import { css } from 'styled-system/css';
 
 const mdPosts = await Astro.glob('./blog/*.md');
 const mdxPosts = await Astro.glob('./blog/*.mdx');
+
 const nonDraftPosts = [...mdxPosts, ...mdPosts]
-	// .filter((post) => !post.frontmatter.draft)
+	.filter((post) => {
+		if (import.meta.env.MODE === 'development') return true;
+
+		return !post.frontmatter.draft;
+	})
+	.filter((post) => {
+		return true;
+	})
 	.sort((a, b) => {
-		// @ts-ignore
-		return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+		return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
 	});
 ---
 
@@ -24,8 +30,9 @@ const nonDraftPosts = [...mdxPosts, ...mdPosts]
 			{
 				nonDraftPosts.map((post) => {
 					const { url } = post;
-					const { date, title, tag } = post.frontmatter;
-					return <PostCard date={date} title={title} tag={tag} url={url} />;
+					const { date, title, tag, draft } = post.frontmatter;
+
+					return <PostCard date={date} title={title} tag={tag} url={url} draft={draft} />;
 				})
 			}
 		</PostContainer>

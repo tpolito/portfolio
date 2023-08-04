@@ -1,11 +1,33 @@
 ---
 // import { vstack } from 'styled-system/patterns';
 import { css } from 'styled-system/css';
+
+const tags = ['all', 'personal', 'tech'];
 ---
 
 <div class={css({ p: '10px' })}>
 	<h2 class={css({ color: 'purple', fontFamily: 'robotoSlab', fontSize: '1.5rem', mb: '1.2rem' })}>
-		Posts
+		Posts - {
+			tags.map((tag) => (
+				<button
+					class={css({
+						backgroundColor: 'transparent',
+						border: 'none',
+						color: 'purple',
+						cursor: 'pointer',
+						fontFamily: 'robotoSlab',
+						fontSize: '1rem',
+						m: '0 0.5rem',
+						textDecoration: 'capitalize',
+						'&:hover': {
+							color: 'purpleTint'
+						}
+					})}
+				>
+					{tag}
+				</button>
+			))
+		}
 	</h2>
 	<div class={css({ display: 'flex', flexDirection: 'column' })}>
 		<slot />

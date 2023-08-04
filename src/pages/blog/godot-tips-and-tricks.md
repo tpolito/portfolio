@@ -4,7 +4,7 @@ title: 'Godot Tips & Tricks'
 author: 'Tyler Polito'
 date: '06 Jan 2022'
 updated: '21 Feb 2022'
-tag: 'Game Dev'
+tag: 'tech'
 ---
 
 The past few months I have been working on a new project built in Godot (more on that later). I have in that time spent quite a bit of time discovering and figuring out solutions to problems. This blog post will be a collection of useful tips, and I will keep these updated.
