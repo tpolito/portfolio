@@ -23,7 +23,8 @@
 	}
 
 	p {
-		color: var(--text);
+		/* text */
+		color: #94a1b2;
 		text-align: center;
 		font-size: 14px;
 	}
