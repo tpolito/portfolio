@@ -18,9 +18,9 @@ export async function getStaticPaths() {
 	});
 }
 
-interface Props {
+type Props = {
 	post: CollectionEntry<'blog'>;
-}
+};
 
 const postStyles = css({
 	fontFamily: 'roboto',

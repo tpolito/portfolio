@@ -1,31 +1,35 @@
 ---
-// import { vstack } from 'styled-system/patterns';
 import { css } from 'styled-system/css';
 
-const tags = ['all', 'personal', 'tech'];
+const categoryButtonStyles = css({
+	backgroundColor: 'transparent',
+	border: 'none',
+	color: 'purple',
+	cursor: 'pointer',
+	fontFamily: 'robotoSlab',
+	fontSize: '1rem',
+	m: '0 0.5rem',
+	textDecoration: 'capitalize',
+	'&:hover': {
+		color: 'purpleTint'
+	}
+});
+
+type Props = {
+	categories: string[];
+	currentCategory?: string;
+};
+
+const { categories } = Astro.props;
 ---
 
 <div class={css({ p: '10px' })}>
 	<h2 class={css({ color: 'purple', fontFamily: 'robotoSlab', fontSize: '1.5rem', mb: '1.2rem' })}>
-		Posts - {
-			tags.map((tag) => (
-				<button
-					class={css({
-						backgroundColor: 'transparent',
-						border: 'none',
-						color: 'purple',
-						cursor: 'pointer',
-						fontFamily: 'robotoSlab',
-						fontSize: '1rem',
-						m: '0 0.5rem',
-						textDecoration: 'capitalize',
-						'&:hover': {
-							color: 'purpleTint'
-						}
-					})}
-				>
-					{tag}
-				</button>
+		Posts - <a class={categoryButtonStyles} href="/">all</a>{
+			categories.map((category) => (
+				<a class={categoryButtonStyles} href={`/category/${category}`}>
+					{category}
+				</a>
 			))
 		}
 	</h2>

@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import Header from '@components/Header.astro';
+import PostCard from '@components/PostCard.astro';
+import PostContainer from '@components/PostTimeline.astro';
+import Layout from '@layouts/Layout.astro';
+
+const posts = await getCollection('blog', (post) => {
+	return import.meta.env.MODE !== 'production' || !post.data.draft;
+});
+
+const categories = [...new Set(posts.map((post) => post.data.category).flat())];
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	const categories = [...new Set(posts.map((post) => post.data.category).flat())];
+	return categories.map((category) => {
+		return {
+			params: {
+				slug: category
+			},
+			props: {
+				category
+			}
+		};
+	});
+}
+
+type Props = {
+	category: string;
+};
+
+const { category } = Astro.props;
+---
+
+<Layout title={`${category} - tpolito`}>
+	<Header />
+
+	<PostContainer categories={categories} currentCategory={category}>
+		{
+			posts
+				.sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime())
+				.filter((post) => post.data.category === category)
+				.map((post) => <PostCard post={post} />)
+		}
+	</PostContainer>
+</Layout>

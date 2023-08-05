@@ -1,5 +1,4 @@
 ---
-import { css } from 'styled-system/css';
 import { getCollection } from 'astro:content';
 import Header from '../components/Header.astro';
 import PostCard from '../components/PostCard.astro';
@@ -9,19 +8,18 @@ import Layout from '@layouts/Layout.astro';
 const posts = await getCollection('blog', (post) => {
 	return import.meta.env.MODE !== 'production' || !post.data.draft;
 });
+
+const categories = [...new Set(posts.map((post) => post.data.category).flat())];
 ---
 
 <Layout title="Blog - tpolito">
-	<div class={css({})}>
-		<Header />
+	<Header />
 
-		<PostContainer>
-			{
-				posts
-					.sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime())
-					.map((post) => <PostCard post={post} />)
-			}
-		</PostContainer>
-		<ul role="list" class="link-card-grid"></ul>
-	</div>
+	<PostContainer categories={categories}>
+		{
+			posts
+				.sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime())
+				.map((post) => <PostCard post={post} />)
+		}
+	</PostContainer>
 </Layout>
