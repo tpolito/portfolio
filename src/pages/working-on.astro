@@ -1,9 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-
-const posts = await Astro.glob('./blog/*.md');
-const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 ---
 
 <Layout title="Home Page - Blog">
