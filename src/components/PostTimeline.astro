@@ -1,10 +1,11 @@
 ---
 import { css } from 'styled-system/css';
+import clsx from 'clsx';
 
 const categoryButtonStyles = css({
 	backgroundColor: 'transparent',
 	border: 'none',
-	color: 'purple',
+	// color: 'purple',
 	cursor: 'pointer',
 	fontFamily: 'robotoSlab',
 	fontSize: '1rem',
@@ -21,13 +22,36 @@ type Props = {
 };
 
 const { categories } = Astro.props;
+const { pathname } = Astro.url;
 ---
 
 <div class={css({ p: '10px' })}>
 	<h2 class={css({ color: 'purple', fontFamily: 'robotoSlab', fontSize: '1.5rem', mb: '1.2rem' })}>
-		Posts - <a class={categoryButtonStyles} href="/">all</a>{
+		Posts - <a
+			class={clsx(
+				categoryButtonStyles,
+				css({
+					color: pathname === '/' && 'purpleTint',
+					'&:hover': {
+						textDecoration: 'underline'
+					}
+				})
+			)}
+			href="/">all</a
+		>{
 			categories.map((category) => (
-				<a class={categoryButtonStyles} href={`/category/${category}`}>
+				<a
+					class={clsx(
+						categoryButtonStyles,
+						css({
+							color: pathname === `/category/${category}` && 'purpleTint',
+							'&:hover': {
+								textDecoration: 'underline'
+							}
+						})
+					)}
+					href={`/category/${category}`}
+				>
 					{category}
 				</a>
 			))
