@@ -44,13 +44,13 @@ const { pathname } = Astro.url;
 					class={clsx(
 						categoryButtonStyles,
 						css({
-							color: pathname === `/category/${category}` && 'purpleTint',
+							color: pathname === `/category/${category}/` && 'purpleTint',
 							'&:hover': {
 								textDecoration: 'underline'
 							}
 						})
 					)}
-					href={`/category/${category}`}
+					href={`/category/${category}/`}
 				>
 					{category}
 				</a>
