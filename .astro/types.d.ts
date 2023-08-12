@@ -217,6 +217,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"journey-to-v8.md": {
+	id: "journey-to-v8.md";
+  slug: "journey-to-v8";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"kings-of-the-wyld.md": {
+	id: "kings-of-the-wyld.md";
+  slug: "kings-of-the-wyld";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "my-blog-journey.md": {
 	id: "my-blog-journey.md";
   slug: "my-blog-journey";

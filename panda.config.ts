@@ -30,7 +30,9 @@ export default defineConfig({
 				textLight: { value: '#fffffe' },
 				purple: { value: '#7f5af0' },
 				purpleTint: { value: '#baa4ff' },
-				green: { value: '#2cb67d' }
+				green: { value: '#2cb67d' },
+				red: { value: '#f05a7a' },
+				orange: { value: '#f0a05a' }
 			},
 			sizes: {
 				contentWidth: { value: '1060px' },

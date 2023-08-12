@@ -8,7 +8,7 @@ export const collections = {
 			createdAt: z.date().transform((str) => new Date(str)),
 			updatedAt: z.date().transform((str) => new Date(str)),
 			title: z.string(),
-			category: z.enum(['personal', 'tech']),
+			category: z.enum(['personal', 'tech', 'climbing', 'media']),
 			tags: z.array(z.string()).optional()
 		})
 	})

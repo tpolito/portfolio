@@ -21,7 +21,16 @@ const dev = import.meta.env.MODE === 'development';
 		display: 'flex',
 		flexDirection: 'column',
 		borderLeftWidth: '2px',
-		borderColor: category === 'personal' ? 'green' : 'purple'
+		borderColor:
+			category === 'climbing'
+				? 'red'
+				: category === 'tech'
+				? 'purple'
+				: category === 'personal'
+				? 'green'
+				: category === 'media'
+				? 'orange'
+				: 'purple'
 	})}
 >
 	<time
@@ -45,7 +54,7 @@ const dev = import.meta.env.MODE === 'development';
 			}
 		})}
 		href={`/blog/${slug}`}
-		>{title} {dev && draft && <span class={css({ color: 'red' })}>DRAFT</span>}</a
+		>{title} {dev && draft && <span class={css({ color: 'yellow' })}>DRAFT</span>}</a
 	>
 	<div
 		class={css({
@@ -57,7 +66,16 @@ const dev = import.meta.env.MODE === 'development';
 			borderWidth: '3px',
 			borderRadius: '50%',
 			borderColor: 'bg',
-			backgroundColor: category === 'personal' ? 'green' : 'purple'
+			backgroundColor:
+				category === 'climbing'
+					? 'red'
+					: category === 'tech'
+					? 'purple'
+					: category === 'personal'
+					? 'green'
+					: category === 'media'
+					? 'orange'
+					: 'purple'
 		})}
 	>
 	</div>
