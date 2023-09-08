@@ -1,6 +1,6 @@
 ---
 import { css } from 'styled-system/css';
-import { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
 type Props = {
 	post: CollectionEntry<'blog'>;
@@ -35,7 +35,16 @@ const dev = import.meta.env.MODE === 'development';
 >
 	<time
 		class={css({
-			color: 'purple',
+			color:
+				category === 'climbing'
+					? 'red'
+					: category === 'tech'
+					? 'purple'
+					: category === 'personal'
+					? 'green'
+					: category === 'media'
+					? 'orange'
+					: 'purple',
 			fontSize: '14px',
 			fontFamily: 'fira'
 		})}>{createdAt.toDateString()}</time
@@ -54,7 +63,7 @@ const dev = import.meta.env.MODE === 'development';
 			}
 		})}
 		href={`/blog/${slug}`}
-		>{title} {dev && draft && <span class={css({ color: 'yellow' })}>DRAFT</span>}</a
+		>{title} {dev && draft && <span class={css({ color: '#ff0036' })}> DRAFT</span>}</a
 	>
 	<div
 		class={css({

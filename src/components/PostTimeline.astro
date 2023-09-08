@@ -4,16 +4,25 @@ import clsx from 'clsx';
 
 const categoryButtonStyles = css({
 	backgroundColor: 'transparent',
-	border: 'none',
-	// color: 'purple',
+	color: 'purple',
 	cursor: 'pointer',
 	fontFamily: 'robotoSlab',
-	fontSize: '1rem',
-	m: '0 0.5rem',
+	fontSize: '.8rem',
 	textDecoration: 'capitalize',
+	borderWidth: '1px',
+	borderColor: 'purple',
+	borderRadius: '4px',
+	p: '4px 6px',
 	'&:hover': {
-		color: 'purpleTint'
+		color: 'purpleTint',
+		borderColor: 'purpleTint'
 	}
+});
+
+const activeCategoryButtonStyles = css({
+	// TODO: Fix this
+	color: 'purpleTint !important',
+	borderColor: 'purpleTint'
 });
 
 type Props = {
@@ -26,12 +35,16 @@ const { pathname } = Astro.url;
 ---
 
 <div class={css({ p: '10px' })}>
-	<h2 class={css({ color: 'purple', fontFamily: 'robotoSlab', fontSize: '1.5rem', mb: '1.2rem' })}>
-		Posts - <a
+	<h2 class={css({ color: 'purple', fontFamily: 'robotoSlab', fontSize: '1.5rem', mb: '0.5rem' })}>
+		Blog
+	</h2>
+	<div class={css({ mb: '1rem' })}>
+		<a
 			class={clsx(
+				pathname === '/' && activeCategoryButtonStyles,
 				categoryButtonStyles,
 				css({
-					color: pathname === '/' && 'purpleTint',
+					mr: '0.5rem',
 					'&:hover': {
 						textDecoration: 'underline'
 					}
@@ -43,8 +56,9 @@ const { pathname } = Astro.url;
 				<a
 					class={clsx(
 						categoryButtonStyles,
+						pathname === `/category/${category}/` && activeCategoryButtonStyles,
 						css({
-							color: pathname === `/category/${category}/` && 'purpleTint',
+							m: '0 0.5rem',
 							'&:hover': {
 								textDecoration: 'underline'
 							}
@@ -56,7 +70,7 @@ const { pathname } = Astro.url;
 				</a>
 			))
 		}
-	</h2>
+	</div>
 	<div class={css({ display: 'flex', flexDirection: 'column' })}>
 		<slot />
 	</div>
