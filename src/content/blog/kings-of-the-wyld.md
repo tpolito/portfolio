@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 createdAt: 2023-08-11
 updatedAt: 2023-08-11
 title: Kings of the Wyld, Bloody Rose, and friendship
