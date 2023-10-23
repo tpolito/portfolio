@@ -1,8 +1,8 @@
 ---
 draft: false
 createdAt: 2022-03-29
-updatedAt: 2022-03-29
-title: Vimifying VS Code
+updatedAt: 2023-10-23
+title: Vimifying VS Code (Outdated)
 category: tech
 tag:
 ---
