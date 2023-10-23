@@ -1,31 +1,24 @@
 <script lang="ts">
-	export let image: string;
+	import { css } from 'styled-system/css';
+	export let imgUrl: string;
 	export let caption: string;
+	export let alt: string | null = null;
+
+	const imgContainer = css({});
+
+	const imgCaption = css({
+		color: 'text',
+		textAlign: 'center',
+		fontSize: '14px'
+	});
 </script>
 
-<div class="image-container">
-	<div class="image" style="background-image: url({image});" />
+<div class={imgContainer}>
+	<picture>
+		<source srcset={imgUrl} />
+		<img src={imgUrl} alt={alt ?? caption} />
+	</picture>
+	{#if caption}
+		<p class={imgCaption}>{caption}</p>
+	{/if}
 </div>
-{#if caption}
-	<p>{caption}</p>
-{/if}
-
-<style>
-	.image-container {
-		height: 500px;
-	}
-
-	.image {
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center center;
-		height: 100%;
-	}
-
-	p {
-		/* text */
-		color: #94a1b2;
-		text-align: center;
-		font-size: 14px;
-	}
-</style>

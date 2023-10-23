@@ -14,7 +14,7 @@ export default defineConfig({
 	globalCss,
 
 	// Where to look for your css declarations
-	include: ['./src/**/*.{ts,tsx,js,jsx,astro}'],
+	include: ['./src/**/*.{ts,tsx,js,jsx,astro,svelte}'],
 
 	// Files to exclude
 	exclude: [],

@@ -1,7 +1,7 @@
 ---
-draft: true
-createdAt: 2023-02-29
-updatedAt: 2023-02-29
+draft: false
+createdAt: 2023-05-29
+updatedAt: 2023-09-22
 title: Vimifying VS Code Part 2
 category: tech
 tag:
