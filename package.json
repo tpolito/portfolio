@@ -12,11 +12,11 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^1.1.2",
-		"@astrojs/svelte": "^4.0.0",
-		"astro": "^3.3.2",
+		"@astrojs/mdx": "^1.1.5",
+		"@astrojs/svelte": "^4.0.4",
+		"astro": "^4.0.4",
 		"clsx": "^2.0.0",
-		"svelte": "^4.2.0"
+		"svelte": "^4.2.8"
 	},
 	"devDependencies": {
 		"@pandacss/dev": "^0.8.0"

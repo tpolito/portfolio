@@ -7,6 +7,8 @@ category: tech
 tag:
 ---
 
+Outdated - see [this post](./vimifying-vscode-pt2) for a more updated info
+
 ### Why not just use Vim?
 
 I made the switch to Vim (specifically Neovim) last year and used it for around four months before wanting to move back to VS Code. This was for a few reasons:
