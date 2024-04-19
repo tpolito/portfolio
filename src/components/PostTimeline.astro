@@ -1,28 +1,5 @@
 ---
-import { css } from 'styled-system/css';
 import clsx from 'clsx';
-
-const categoryButtonStyles = css({
-	backgroundColor: 'transparent',
-	color: 'purple',
-	cursor: 'pointer',
-	fontFamily: 'roboto',
-	fontSize: '.8rem',
-	textDecoration: 'capitalize',
-	borderWidth: '1px',
-	borderColor: 'purple',
-	borderRadius: '4px',
-	p: '4px 6px',
-	'&:hover': {
-		color: 'purpleTint',
-		borderColor: 'purpleTint'
-	}
-});
-
-const activeCategoryButtonStyles = css({
-	color: 'purpleTint !important',
-	borderColor: 'purpleTint'
-});
 
 type Props = {
 	categories: string[];
@@ -33,48 +10,18 @@ const { categories } = Astro.props;
 const { pathname } = Astro.url;
 ---
 
-<div class={css({ p: '10px' })}>
-	<h2 class={css({ color: 'purple', fontFamily: 'robotoSlab', fontSize: '1.5rem', mb: '0.5rem' })}>
-		Blog
-	</h2>
-	<div
-		class={css({
-			mb: '1rem'
-		})}
-	>
-		<a
-			class={clsx(
-				pathname === '/' && activeCategoryButtonStyles,
-				categoryButtonStyles,
-				css({
-					mr: '0.5rem',
-					'&:hover': {
-						textDecoration: 'underline'
-					}
-				})
-			)}
-			href="/">All</a
-		>{
+<div>
+	<h2>Blog</h2>
+	<div>
+		<a href="/">All</a>{
 			categories.map((category) => (
-				<a
-					class={clsx(
-						categoryButtonStyles,
-						pathname === `/category/${category}/` && activeCategoryButtonStyles,
-						css({
-							m: '0 0.5rem',
-							'&:hover': {
-								textDecoration: 'underline'
-							}
-						})
-					)}
-					href={`/category/${category}/`}
-				>
+				<a href={`/category/${category}/`}>
 					{category.charAt(0).toUpperCase() + category.slice(1)}
 				</a>
 			))
 		}
 	</div>
-	<div class={css({ display: 'flex', flexDirection: 'column' })}>
+	<div>
 		<slot />
 	</div>
 </div>

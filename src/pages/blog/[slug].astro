@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import { css } from 'styled-system/css';
 import Layout from '@layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -22,62 +21,6 @@ type Props = {
 	post: CollectionEntry<'blog'>;
 };
 
-const postStyles = css({
-	fontFamily: 'roboto',
-	lineHeight: '1.4rem',
-	color: 'textLight',
-	fontSize: '1.1rem',
-	'&  h2': {
-		color: 'purple',
-		fontSize: '1.5rem'
-	},
-	'&  h3': {
-		color: 'purple',
-		// TODO: Should fix all the posts with h3s insteadof h2s
-		fontSize: '1.5rem'
-	},
-	'&  p': {
-		my: '16px'
-	},
-	'& ol': {
-		listStyle: 'decimal',
-		ml: '2rem'
-	},
-	'& ul': {
-		listStyle: 'disc',
-		ml: '2rem'
-	},
-	'&  li': {
-		margin: '0.5rem 0'
-	},
-	'&  a': {
-		color: 'purpleTint',
-		textDecoration: 'none',
-		'&:hover': {
-			textDecoration: 'underline'
-		}
-	},
-	'& blockquote': {
-		borderLeftWidth: '4px',
-		borderRadius: '4px',
-		p: '0.2rem 0rem 0.2rem 1rem',
-		color: 'textLight',
-		backgroundColor: 'bgTint'
-	},
-	'& pre': {
-		borderRadius: '4px',
-		p: '1rem'
-	},
-	'& pre code': {
-		backgroundColor: 'bgCode'
-	},
-	'& code': {
-		backgroundColor: 'bgTint',
-		borderRadius: '4px',
-		p: '0.2rem 0.4rem'
-	}
-});
-
 const { post } = Astro.props;
 const {
 	data: { createdAt, title }
@@ -86,31 +29,15 @@ const { Content } = await post.render();
 ---
 
 <Layout title={title}>
-	<div
-		class={css({
-			maxW: '40rem',
-			mx: 'auto',
-			p: '1rem'
-		})}
-	>
-		<h1
-			class={css({
-				color: 'purple',
-				fontSize: '2rem',
-				textDecoration: 'underline'
-			})}
-		>
+	<div>
+		<h1>
 			{title}
 		</h1>
-		<p
-			class={css({
-				color: 'textLight'
-			})}
-		>
+		<p>
 			Posted on:
 			<time>{createdAt.toDateString()}</time>
 		</p>
-		<article class={postStyles}>
+		<article>
 			<Content />
 		</article>
 	</div>

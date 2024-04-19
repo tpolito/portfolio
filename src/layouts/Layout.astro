@@ -1,6 +1,5 @@
 ---
 import '../index.css';
-import { css } from 'styled-system/css';
 import Navbar from '../components/Navbar.astro';
 
 export interface Props {
@@ -21,14 +20,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Navbar />
-		<main
-			class={css({
-				maxWidth: 'breakpoint-lg',
-				mx: 'auto',
-				position: 'relative',
-				px: { base: '4px', md: '6px', lg: '8px' }
-			})}
-		>
+		<main>
 			<slot />
 		</main>
 	</body>

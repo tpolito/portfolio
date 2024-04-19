@@ -1,39 +1,10 @@
 ---
-import { css } from 'styled-system/css';
-import { flex } from 'styled-system/patterns';
 ---
 
-<nav
-	class={flex({
-		backgroundColor: 'bg',
-		justify: 'center',
-		borderBottomWidth: '4px',
-		borderColor: 'purpleTint',
-		mb: '2.4rem',
-		position: 'sticky'
-	})}
->
-	<ul
-		class={flex({
-			direction: 'row',
-			align: 'center',
-			m: 0
-		})}
-	>
-		<li class={css({ p: '1rem' })}>
-			<a
-				class={css({
-					fontSize: '1rem',
-					fontFamily: 'fira',
-					color: 'textLight',
-					'&:hover': {
-						color: 'purple',
-						textDecoration: 'underline',
-						cursor: 'pointer'
-					}
-				})}
-				href="/">Home</a
-			>
+<nav>
+	<ul>
+		<li>
+			<a href="/">Home</a>
 		</li>
 	</ul>
 </nav>

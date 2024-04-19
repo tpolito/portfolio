@@ -1,5 +1,4 @@
 ---
-import { css } from 'styled-system/css';
 import type { CollectionEntry } from 'astro:content';
 
 type Props = {
@@ -14,78 +13,8 @@ const {
 const dev = import.meta.env.MODE === 'development';
 ---
 
-<div
-	class={css({
-		padding: '1rem 1.5rem 3rem 1.5rem',
-		position: 'relative',
-		display: 'flex',
-		flexDirection: 'column',
-		borderLeftWidth: '2px',
-		borderColor:
-			category === 'climbing'
-				? 'red'
-				: category === 'tech'
-				? 'purple'
-				: category === 'personal'
-				? 'green'
-				: category === 'media'
-				? 'orange'
-				: 'purple'
-	})}
->
-	<time
-		class={css({
-			color:
-				category === 'climbing'
-					? 'red'
-					: category === 'tech'
-					? 'purple'
-					: category === 'personal'
-					? 'green'
-					: category === 'media'
-					? 'orange'
-					: 'purple',
-			fontSize: '14px',
-			fontFamily: 'fira'
-		})}>{createdAt.toDateString()}</time
-	>
-	<a
-		class={css({
-			p: 0,
-			fontSize: '18px',
-			fontFamily: 'roboto',
-			m: '0.5rem 0',
-			color: 'textLight',
-			textDecoration: 'none',
-			'&:hover': {
-				cursor: 'pointer',
-				textDecoration: 'underline'
-			}
-		})}
-		href={`/blog/${slug}`}
-		>{title} {dev && draft && <span class={css({ color: '#ff0036' })}> DRAFT</span>}</a
-	>
-	<div
-		class={css({
-			position: 'absolute',
-			left: '-13px',
-			top: '32px',
-			width: '24px',
-			height: '24px',
-			borderWidth: '3px',
-			borderRadius: '50%',
-			borderColor: 'bg',
-			backgroundColor:
-				category === 'climbing'
-					? 'red'
-					: category === 'tech'
-					? 'purple'
-					: category === 'personal'
-					? 'green'
-					: category === 'media'
-					? 'orange'
-					: 'purple'
-		})}
-	>
-	</div>
+<div>
+	<time>{createdAt.toDateString()}</time>
+	<a href={`/blog/${slug}`}>{title} {dev && draft && <span> DRAFT</span>}</a>
+	<div></div>
 </div>

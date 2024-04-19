@@ -4,7 +4,6 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"prepare": "panda codegen",
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
@@ -17,8 +16,5 @@
 		"astro": "^4.0.4",
 		"clsx": "^2.0.0",
 		"svelte": "^4.2.8"
-	},
-	"devDependencies": {
-		"@pandacss/dev": "^0.8.0"
 	}
 }
