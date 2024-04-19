@@ -13,13 +13,13 @@ const { pathname } = Astro.url;
 <div>
 	<h2>Blog</h2>
 	<div class="category-wrapper">
-		<a class="category-pill" href="/">All</a>{
+		<!-- <a class="category-pill" href="/">All</a>{
 			categories.map((category) => (
 				<a class="category-pill" href={`/category/${category}/`}>
 					{category.charAt(0).toUpperCase() + category.slice(1)}
 				</a>
 			))
-		}
+		} -->
 	</div>
 	<ul class="post-timeline">
 		<slot />
