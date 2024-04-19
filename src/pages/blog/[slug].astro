@@ -23,22 +23,50 @@ type Props = {
 
 const { post } = Astro.props;
 const {
-	data: { createdAt, title }
+	data: { createdAt, title, updatedAt }
 } = post;
 const { Content } = await post.render();
 ---
 
 <Layout title={title}>
-	<div>
-		<h1>
+	<div class="post-wrapper">
+		<h1 class="post-title">
 			{title}
 		</h1>
-		<p>
+		<p class="post-date">
 			Posted on:
-			<time>{createdAt.toDateString()}</time>
+			<time>{createdAt.toDateString()}</time> | Updated on: <time>{updatedAt.toDateString()}</time>
 		</p>
-		<article>
+		<article class="post-body">
 			<Content />
 		</article>
 	</div>
 </Layout>
+
+<style>
+	.post-wrapper {
+		margin: 0 20px;
+		padding-bottom: var(--spacing-xl);
+	}
+
+	.post-date {
+		font-size: smaller;
+		color: var(--color-secondary);
+		@media (prefers-color-scheme: dark) {
+			color: var(--color-secondary);
+		}
+	}
+
+	.post-body {
+		img {
+			display: block;
+			max-width: var(--max-content-width);
+			width: auto;
+			height: auto;
+		}
+
+		li:not(:last-child) {
+			margin-bottom: var(--spacing-md);
+		}
+	}
+</style>

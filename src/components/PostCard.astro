@@ -13,8 +13,27 @@ const {
 const dev = import.meta.env.MODE === 'development';
 ---
 
-<div>
-	<time>{createdAt.toDateString()}</time>
-	<a href={`/blog/${slug}`}>{title} {dev && draft && <span> DRAFT</span>}</a>
-	<div></div>
-</div>
+<li class="post-link">
+	<a href={`/blog/${slug}`}>{title} {dev && draft && <span class="draft"> DRAFT</span>}</a>
+	<time>Published on: {createdAt.toDateString()}</time>
+</li>
+
+<style>
+	.post-link {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xs);
+
+		a {
+			font-size: large;
+		}
+		time {
+			font-size: smaller;
+		}
+	}
+	.draft {
+		color: red;
+		text-decoration: underline;
+		font-size: smaller;
+	}
+</style>

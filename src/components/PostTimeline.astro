@@ -12,16 +12,34 @@ const { pathname } = Astro.url;
 
 <div>
 	<h2>Blog</h2>
-	<div>
-		<a href="/">All</a>{
+	<div class="category-wrapper">
+		<a class="category-pill" href="/">All</a>{
 			categories.map((category) => (
-				<a href={`/category/${category}/`}>
+				<a class="category-pill" href={`/category/${category}/`}>
 					{category.charAt(0).toUpperCase() + category.slice(1)}
 				</a>
 			))
 		}
 	</div>
-	<div>
+	<ul class="post-timeline">
 		<slot />
-	</div>
+	</ul>
 </div>
+
+<style>
+	.category-wrapper {
+		display: flex;
+		gap: var(--spacing-md);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.category-pill {
+	}
+
+	.post-timeline {
+		padding: 0;
+		li:not(:last-child) {
+			margin-bottom: var(--spacing-md);
+		}
+	}
+</style>
