@@ -206,6 +206,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
+"2024-in-review.mdx": {
+	id: "2024-in-review.mdx";
+  slug: "2024-in-review";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 "diving-into-svelte.md": {
 	id: "diving-into-svelte.md";
   slug: "diving-into-svelte";
