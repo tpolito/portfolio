@@ -8,18 +8,20 @@ type Props = {
 
 const { categories } = Astro.props;
 const { pathname } = Astro.url;
+
+const colors = []
 ---
 
 <div>
 	<h2>Blog</h2>
 	<div class="category-wrapper">
-		<!-- <a class="category-pill" href="/">All</a>{
+		<a class="category-pill" href="/">All</a>{
 			categories.map((category) => (
 				<a class="category-pill" href={`/category/${category}/`}>
 					{category.charAt(0).toUpperCase() + category.slice(1)}
 				</a>
 			))
-		} -->
+		} 
 	</div>
 	<ul class="post-timeline">
 		<slot />
@@ -32,9 +34,15 @@ const { pathname } = Astro.url;
 		gap: var(--spacing-md);
 		margin-bottom: var(--spacing-md);
 	}
+  
+  .category-pill {
+    color: var(--color-secondary) !important;
+  }
 
-	.category-pill {
-	}
+  .category-pill:hover {
+    color: #fff !important;
+    text-decoration: underline;
+  }
 
 	.post-timeline {
 		padding: 0;
