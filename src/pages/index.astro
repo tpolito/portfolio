@@ -15,6 +15,11 @@ const categories = [...new Set(posts.map((post) => post.data.category).flat())];
 <Layout title="Blog - tpolito">
 	<Header />
 
+	<p>
+		Hello! Welcome to my small corner of the internet. I can't promise there is anything interesting
+		going on overhere.
+	</p>
+
 	<PostContainer categories={categories}>
 		{
 			posts
@@ -23,3 +28,5 @@ const categories = [...new Set(posts.map((post) => post.data.category).flat())];
 		}
 	</PostContainer>
 </Layout>
+
+<style></style>

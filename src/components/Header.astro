@@ -4,24 +4,28 @@ interface Props {
 	subtitle?: string;
 }
 
-const {
-	title = "Hello there, I'm Tyler 👋",
-	subtitle = 'I am a software enginneer and game developer who loves to write about software engineering, games, and other hobbies.'
-} = Astro.props;
+const { title = 'Tyler Polito', subtitle = 'Software engineer. Rock climber. Game player.' } =
+	Astro.props;
 ---
 
-<h1>
+<h1 class="heading">
 	{title}
 </h1>
-<div>
-	<p>
-		{subtitle}
-	</p>
-</div>
+<p class="subtitle">
+	{subtitle}
+</p>
 
 <div class="divider"></div>
 
 <style>
+	.heading {
+		margin-bottom: 0;
+	}
+
+	.subtitle {
+		margin-top: var(--spacing-sm);
+	}
+
 	.divider {
 		margin: 2rem 0;
 		border-bottom: 1px solid #000;

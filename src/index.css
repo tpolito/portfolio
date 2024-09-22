@@ -1,64 +1,63 @@
 :root {
-  /* Fonts */
-  --font-sans-serif: sans-serif, sans-serif;
-  --font-monospace: monospace, monospace;
+	/* Fonts */
+	--font-sans-serif: sans-serif, sans-serif;
+	--font-monospace: monospace, monospace;
 
-  /* Widths */
-  --breakpoint-tablet: 768px;
-  --max-content-width: 987px;
+	/* Widths */
+	--breakpoint-tablet: 768px;
+	--max-content-width: 987px;
 
-  /* Spacing */
-  --spacing-xxs: 2px;
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
-  --spacing-xxl: 128px;
+	/* Spacing */
+	--spacing-xxs: 2px;
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 16px;
+	--spacing-lg: 32px;
+	--spacing-xl: 64px;
+	--spacing-xxl: 128px;
 
-  /* Colors */
-  --color-secondary: #333333;
+	/* Colors */
+	--color-secondary: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
+	/* Dark mode */
+	:root {
+		/* Colors */
+		--color-secondary: #cccccc;
 
-  /* Dark mode */
-  :root {
-    /* Colors */
-    --color-secondary: #cccccc;
+		a {
+			color: rgb(92 159 253);
+		}
 
-    a {
-      color: rgb(92 159 253);
-    }
-
-    a:visited {
-      color: rgb(205 150 255);
-    }
-  }
+		a:visited {
+			color: rgb(205 150 255);
+		}
+	}
 }
 
 body {
-  font-family: var(--font-monospace);
+	font-family: var(--font-monospace);
 
-  a {
-    text-decoration: none;
-  }
+	a {
+		text-decoration: none;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000;
-    color: #fff;
-  }
+	body {
+		background-color: #000;
+		color: #fff;
+	}
 }
 
 main {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-  main {
-    margin: 0 auto;
-    max-width: var(--max-content-width);
-  }
+	main {
+		margin: 0 auto;
+		max-width: var(--max-content-width);
+	}
 }

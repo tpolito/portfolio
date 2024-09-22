@@ -227,6 +227,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"i-am-your-beast.md": {
+	id: "i-am-your-beast.md";
+  slug: "i-am-your-beast";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "journey-to-v8.md": {
 	id: "journey-to-v8.md";
   slug: "journey-to-v8";
@@ -244,6 +251,13 @@ declare module 'astro:content' {
 "thoughts-on-recent-job-search.md": {
 	id: "thoughts-on-recent-job-search.md";
   slug: "thoughts-on-recent-job-search";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"using.md": {
+	id: "using.md";
+  slug: "using";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
