@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@astrojs/mdx':
-        specifier: ^3.1.0
+        specifier: ^3.1.9
         version: 3.1.9(astro@4.16.16(rollup@4.28.0)(typescript@5.3.3))
       '@astrojs/svelte':
         specifier: ^6.0.2
