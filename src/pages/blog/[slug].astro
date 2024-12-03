@@ -36,9 +36,7 @@ const { Content } = await post.render();
 		</h1>
 		<p class="post-date">
 			Posted on:
-			<time>{createdAt.toDateString()}</time> | Updated on: <time
-				>{updatedAt.toDateString()}</time
-			>
+			<time>{createdAt.toDateString()}</time> | Updated on: <time>{updatedAt.toDateString()}</time>
 		</p>
 		<article class="post-body">
 			<Content />
@@ -67,9 +65,9 @@ const { Content } = await post.render();
 	.post-body {
 		img {
 			display: block;
-			max-width: var(--max-content-width);
-			width: auto;
+			max-width: 100%;
 			height: auto;
+			margin: 0 auto;
 		}
 
 		li:not(:last-child) {
