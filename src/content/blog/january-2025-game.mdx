@@ -1,0 +1,42 @@
+---
+draft: true
+createdAt: 2025-01-28
+updatedAt: 2024-01-28
+title: One game a month - January 2025
+category: tech
+tag:
+---
+
+import { Image } from 'astro:assets';
+import level3 from '../../assets/jan-2025-game-lvl3.png';
+import proto from '../../assets/jan-2025-mov.gif';
+
+As a touched on in my [post recapping 2024](./2024-in-review) I'm going to (try) to make one game a month. This is in order to get better at game dev generally, before making a more substancial game.
+
+## The game
+
+I thought what better way to get started than a ✨_platformer_✨. My friend and I decided to use the same [asset pack from Kenny](https://kenney.nl/assets/pico-8-platformer). You can try the [game here](https://poetril.itch.io/january-2024-game).
+
+<Image src={level3} alt="Third level from the game" />
+
+At its core the game is a time trial platformer. Kill all the enemies to beat the level, do it as fast as possible. Its pretty simple mechanicly. You have to collect the red "ammo" in order to fire at the spider enemies. The blue orbs will grant you an extra jump in mid air. You die if you hit the spikes or run into an enemy. With that out of the way lets get into thoughts and reflections on the month.
+
+### What went well
+
+The game came together very quickily initially. This video is after two working sessions.
+
+<Image src={proto} alt="prototype gif" />
+
+The systems I created were very easy to extend, expand on. Creating new levels from a single `base_level` was simple. Adding ammo, extra jumps, level timers and more took very little time over all. In addition to that, I learned _a lot_ and spent time designing systems that will save me time next month. Saving/loading json, an audio system that works nicely, settings for those audio options, and a convient way to push builds to [itch.io](https://itch.io/) from the command line.
+
+The controls felt responsive to me, and I enjoyed just _moving_ around in the game. I thought the levels (few as they were) were fun to play on repeat, to try and get better times.
+
+## What went poorly 
+
+The biggest hurdle from multiple standpoints was level design. I wasn't able to get auto tiling setup, so each tile had to get placed manually. This made creating new levels very time consuming, and not fun. In addition I _am not good_ at designing levels. The beauty of games like [Neon white](https://store.steampowered.com/app/1533420/Neon_White/), [Celeste](https://store.steampowered.com/app/504230/Celeste/), or other platformers is the that they often have a straight forward way to complete a level. But they also have alternate routes that may be harder, but reward mastery over the game. All my levels are incredibly one dimensional, the way your brain tells you to do the level is always the way you should do it. Perhaps a Super Mario approach would have been better, with longer horizontal levels as opposed to small, confined rooms. 
+
+The other weakpoint was the sound design of the game. Maybe it comes with time, but I sure found a lot of sounds that _did not_ sound good. But it was hard to find noises that seemed cohesive, and worked together well. 
+
+## Take aways
+
+Like all software, keeping code clean and ensuring systems are easy to extend is paramount. I need to better wrap my head around the game loop better. My head is still stuck in the realm of the web, specifically react (my day job) with a render loop that functions very differently. I'm not doing a 48 hour jam, I can take the time to better think out systems and build them in a way that won't bite me later. I'm excited to get into next months game to take all these reuseable systems, and lessons forward.
