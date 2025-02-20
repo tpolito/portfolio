@@ -17,6 +17,7 @@
 	--spacing-xxl: 128px;
 
 	/* Colors */
+	--color-primary: rgb(134 0 255);
 	--color-secondary: #333333;
 }
 
@@ -24,15 +25,8 @@
 	/* Dark mode */
 	:root {
 		/* Colors */
+		--color-primary: rgb(205 150 255);
 		--color-secondary: #cccccc;
-
-		a {
-			color: rgb(92 159 253);
-		}
-
-		a:visited {
-			color: rgb(205 150 255);
-		}
 	}
 }
 
@@ -41,6 +35,7 @@ body {
 
 	a {
 		text-decoration: none;
+		color: var(--color-primary);
 	}
 }
 

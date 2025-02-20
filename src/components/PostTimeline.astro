@@ -9,7 +9,7 @@ type Props = {
 const { categories } = Astro.props;
 const { pathname } = Astro.url;
 
-const colors = []
+const colors = [];
 ---
 
 <div>
@@ -21,8 +21,9 @@ const colors = []
 					{category.charAt(0).toUpperCase() + category.slice(1)}
 				</a>
 			))
-		} 
+		}
 	</div>
+	<div class="divider"></div>
 	<ul class="post-timeline">
 		<slot />
 	</ul>
@@ -34,15 +35,15 @@ const colors = []
 		gap: var(--spacing-md);
 		margin-bottom: var(--spacing-md);
 	}
-  
-  .category-pill {
-    color: var(--color-secondary) !important;
-  }
 
-  .category-pill:hover {
-    color: #fff !important;
-    text-decoration: underline;
-  }
+	.category-pill {
+		color: var(--color-secondary) !important;
+	}
+
+	.category-pill:hover {
+		filter: brightness(2.5);
+		text-decoration: underline;
+	}
 
 	.post-timeline {
 		padding: 0;
