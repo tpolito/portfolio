@@ -1,0 +1,436 @@
+---
+import Layout from '@layouts/Layout.astro';
+const pageTitle = 'Climbing Session Tracker';
+---
+
+<Layout title={pageTitle}>
+	<div class="container">
+		<div class="stats-panel">
+			<h2>Session Stats</h2>
+			<div class="stats-grid">
+				<div class="stat-box">
+					<span class="stat-label">Total Climbs</span>
+					<span id="total-climbs" class="stat-value">0</span>
+				</div>
+				<div class="stat-box">
+					<span class="stat-label">Cumulative Grade</span>
+					<span id="cumulative-grade" class="stat-value">0</span>
+				</div>
+				<div class="stat-box">
+					<span class="stat-label">Session Time</span>
+					<span id="session-timer" class="stat-value">00:00:00</span>
+				</div>
+			</div>
+			<button id="start-session" class="btn primary">Start Session</button>
+			<button id="end-session" class="btn danger" disabled>End Session</button>
+		</div>
+
+		<div class="climb-form">
+			<h2>Add Climb</h2>
+			<div class="grade-buttons" id="grade-buttons">
+				<button class="grade-btn" data-grade="V0" disabled>V0</button>
+				<button class="grade-btn" data-grade="V1" disabled>V1</button>
+				<button class="grade-btn" data-grade="V2" disabled>V2</button>
+				<button class="grade-btn" data-grade="V3" disabled>V3</button>
+				<button class="grade-btn" data-grade="V4" disabled>V4</button>
+				<button class="grade-btn" data-grade="V5" disabled>V5</button>
+				<button class="grade-btn" data-grade="V6" disabled>V6</button>
+				<button class="grade-btn" data-grade="V7" disabled>V7</button>
+				<button class="grade-btn" data-grade="V8" disabled>V8</button>
+				<button class="grade-btn" data-grade="V9" disabled>V9</button>
+				<button class="grade-btn" data-grade="V10" disabled>V10</button>
+				<button class="grade-btn" data-grade="V11" disabled>V11</button>
+				<button class="grade-btn" data-grade="V12" disabled>V12</button>
+			</div>
+		</div>
+
+		<div class="climbs-list">
+			<h2>Session Climbs</h2>
+			<ul id="climbs-container"></ul>
+		</div>
+	</div>
+
+	<style>
+		:root {
+			/* Fonts */
+			--font-sans-serif: sans-serif, sans-serif;
+			--font-monospace: monospace, monospace;
+
+			/* Widths */
+			--breakpoint-tablet: 768px;
+			--max-content-width: 987px;
+
+			/* Spacing */
+			--spacing-xxs: 2px;
+			--spacing-xs: 4px;
+			--spacing-sm: 8px;
+			--spacing-md: 16px;
+			--spacing-lg: 32px;
+			--spacing-xl: 64px;
+			--spacing-xxl: 128px;
+
+			/* Colors */
+			--color-primary: rgb(134 0 255);
+			--color-secondary: #333333;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			/* Dark mode */
+			:root {
+				/* Colors */
+				--color-primary: rgb(205 150 255);
+				--color-secondary: #cccccc;
+			}
+		}
+
+		.container {
+			padding: var(--spacing-md);
+		}
+
+		.stats-panel {
+			background-color: rgba(245, 245, 245, 0.1);
+			border-radius: var(--spacing-sm);
+			padding: var(--spacing-md);
+			margin-bottom: var(--spacing-lg);
+			border: 1px solid rgba(var(--color-primary), 0.2);
+		}
+
+		.stats-grid {
+			display: flex;
+			flex-direction: column;
+			gap: var(--spacing-md);
+			margin-bottom: var(--spacing-md);
+
+			@media (min-width: 768px) {
+				flex-direction: row;
+			}
+		}
+
+		.stat-box {
+			background-color: rgba(255, 255, 255, 0.05);
+			border-radius: var(--spacing-xs);
+			padding: var(--spacing-md);
+			text-align: center;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.stat-label {
+			display: block;
+			font-size: 0.9rem;
+			color: var(--color-secondary);
+			margin-bottom: var(--spacing-xs);
+		}
+
+		.stat-value {
+			display: block;
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: var(--color-primary);
+		}
+
+		.btn {
+			padding: var(--spacing-sm) var(--spacing-md);
+			border: none;
+			border-radius: var(--spacing-xs);
+			cursor: pointer;
+			font-weight: bold;
+			margin-right: var(--spacing-sm);
+			font-family: var(--font-monospace);
+		}
+
+		.primary {
+			background-color: var(--color-primary);
+			color: white;
+		}
+
+		.danger {
+			background-color: #f44336;
+			color: white;
+		}
+
+		.btn:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+
+		.climb-form {
+			background-color: rgba(245, 245, 245, 0.1);
+			border-radius: var(--spacing-sm);
+			padding: var(--spacing-md);
+			margin-bottom: var(--spacing-lg);
+			border: 1px solid rgba(var(--color-primary), 0.2);
+		}
+
+		.grade-buttons {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+			gap: var(--spacing-sm);
+			margin-bottom: var(--spacing-md);
+		}
+
+		.grade-btn {
+			padding: var(--spacing-sm);
+			border: 1px solid var(--color-primary);
+			background-color: transparent;
+			color: var(--color-primary);
+			border-radius: var(--spacing-xs);
+			cursor: pointer;
+			font-family: var(--font-monospace);
+			transition: all 0.2s ease;
+		}
+
+		.grade-btn:hover:not(:disabled) {
+			background-color: var(--color-primary);
+			color: white;
+		}
+
+		.grade-btn:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+
+		.climbs-list {
+			background-color: rgba(245, 245, 245, 0.1);
+			border-radius: var(--spacing-sm);
+			padding: var(--spacing-md);
+			border: 1px solid rgba(var(--color-primary), 0.2);
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		li {
+			background-color: rgba(255, 255, 255, 0.05);
+			padding: var(--spacing-sm) var(--spacing-md);
+			margin-bottom: var(--spacing-sm);
+			border-radius: var(--spacing-xs);
+			display: flex;
+			justify-content: space-between;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		h2 {
+			color: var(--color-primary);
+			margin-top: 0;
+			margin-bottom: var(--spacing-md);
+		}
+
+		@media (prefers-color-scheme: dark) {
+			.stat-box,
+			.climb-form,
+			.climbs-list,
+			li {
+				background-color: rgba(30, 30, 30, 0.5);
+			}
+		}
+
+		@media (min-width: 768px) {
+			.container {
+				max-width: var(--max-content-width);
+				margin: 0 auto;
+			}
+
+			.grade-buttons {
+				grid-template-columns: repeat(13, 1fr);
+			}
+		}
+	</style>
+
+	<script>
+		// Session data structure
+		let sessionData = {
+			startTime: null,
+			endTime: null,
+			isActive: false,
+			climbs: [],
+			timerInterval: null
+		};
+
+		// DOM Elements
+		const startSessionBtn = document.getElementById('start-session');
+		const endSessionBtn = document.getElementById('end-session');
+		const gradeButtons = document.querySelectorAll('.grade-btn');
+		const totalClimbsEl = document.getElementById('total-climbs');
+		const cumulativeGradeEl = document.getElementById('cumulative-grade');
+		const sessionTimerEl = document.getElementById('session-timer');
+		const climbsContainer = document.getElementById('climbs-container');
+
+		// Load data from localStorage
+		function loadSessionData() {
+			const savedData = localStorage.getItem('climbingSession');
+			if (savedData) {
+				sessionData = JSON.parse(savedData);
+
+				// Restore UI state
+				if (sessionData.isActive) {
+					startSessionBtn.disabled = true;
+					endSessionBtn.disabled = false;
+					enableGradeButtons(true);
+
+					// Restart timer
+					startTimer(new Date(sessionData.startTime));
+				}
+
+				// Update UI
+				updateStats();
+				renderClimbs();
+			}
+		}
+
+		// Save data to localStorage
+		function saveSessionData() {
+			localStorage.setItem('climbingSession', JSON.stringify(sessionData));
+		}
+
+		// Enable or disable grade buttons
+		function enableGradeButtons(enabled) {
+			gradeButtons.forEach((btn) => {
+				btn.disabled = !enabled;
+			});
+		}
+
+		// Start a new climbing session
+		function startSession() {
+			sessionData.startTime = new Date().toISOString();
+			sessionData.isActive = true;
+			sessionData.climbs = [];
+			sessionData.endTime = null;
+
+			// Update UI
+			startSessionBtn.disabled = true;
+			endSessionBtn.disabled = false;
+			enableGradeButtons(true);
+
+			// Start timer
+			startTimer(new Date(sessionData.startTime));
+
+			// Save to localStorage
+			saveSessionData();
+
+			// Update UI
+			updateStats();
+			renderClimbs();
+		}
+
+		// End the current climbing session
+		function endSession() {
+			sessionData.endTime = new Date().toISOString();
+			sessionData.isActive = false;
+
+			// Update UI
+			startSessionBtn.disabled = false;
+			endSessionBtn.disabled = true;
+			enableGradeButtons(false);
+
+			// Stop timer
+			clearInterval(sessionData.timerInterval);
+
+			// Save to localStorage
+			saveSessionData();
+		}
+
+		// Add a new climb to the session
+		function addClimb(grade) {
+			const timestamp = new Date().toISOString();
+
+			sessionData.climbs.push({
+				grade,
+				timestamp
+			});
+
+			// Save to localStorage
+			saveSessionData();
+
+			// Update UI
+			updateStats();
+			renderClimbs();
+		}
+
+		// Update the stats display
+		function updateStats() {
+			// Update total climbs
+			totalClimbsEl.textContent = sessionData.climbs.length;
+
+			// Calculate cumulative grade
+			const gradeValue = sessionData.climbs.reduce((sum, climb) => {
+				// Extract the number from the grade (e.g., "V5" -> 5)
+				const gradeNum = parseInt(climb.grade.substring(1));
+				return sum + gradeNum;
+			}, 0);
+
+			cumulativeGradeEl.textContent = `${gradeValue}`;
+		}
+
+		// Render the list of climbs
+		function renderClimbs() {
+			climbsContainer.innerHTML = '';
+
+			// Sort climbs by timestamp (newest first)
+			const sortedClimbs = [...sessionData.climbs].reverse();
+
+			sortedClimbs.forEach((climb, index) => {
+				const li = document.createElement('li');
+				const time = new Date(climb.timestamp);
+				li.innerHTML = `
+                    <span>${climb.grade}</span>
+                    <span>${time.toLocaleTimeString()}</span>
+                `;
+				climbsContainer.appendChild(li);
+			});
+		}
+
+		// Start the session timer
+		function startTimer(startTime) {
+			// Clear any existing interval
+			if (sessionData.timerInterval) {
+				clearInterval(sessionData.timerInterval);
+			}
+
+			// Update timer immediately
+			updateTimer(startTime);
+
+			// Set interval to update timer every second
+			sessionData.timerInterval = setInterval(() => {
+				updateTimer(startTime);
+			}, 1000);
+		}
+
+		// Update the timer display
+		function updateTimer(startTime) {
+			const now = new Date();
+			const diff = now - startTime;
+
+			// Calculate hours, minutes, seconds
+			const hours = Math.floor(diff / (1000 * 60 * 60));
+			const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+			// Format as HH:MM:SS
+			const formattedTime = [
+				hours.toString().padStart(2, '0'),
+				minutes.toString().padStart(2, '0'),
+				seconds.toString().padStart(2, '0')
+			].join(':');
+
+			sessionTimerEl.textContent = formattedTime;
+		}
+
+		// Event listeners
+		startSessionBtn.addEventListener('click', startSession);
+		endSessionBtn.addEventListener('click', endSession);
+
+		// Add click event listeners to all grade buttons
+		gradeButtons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				if (!btn.disabled) {
+					addClimb(btn.dataset.grade);
+				}
+			});
+		});
+
+		// Initialize the app
+		document.addEventListener('DOMContentLoaded', loadSessionData);
+	</script>
+</Layout>
