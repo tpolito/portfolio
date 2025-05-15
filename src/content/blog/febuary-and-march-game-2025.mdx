@@ -1,0 +1,41 @@
+---
+draft: false 
+createdAt: 2025-04-28
+updatedAt: 2024-04-28
+title: One game a month - Feb/March/April 2025
+category: tech
+tag:
+---
+
+import Test from "../../components/svelte/Test.svelte"
+import BlogImage from "../../components/BlogImage.astro"
+import love2dPrototype from '../../assets/love-2d-prototype.png';
+import godotPrototype from '../../assets/godot-prototype.png';
+
+Alright...so where are the three games for February, March, and April???
+
+### February
+
+Welllll, this month I mostly spent fiddling around with game networking and servers. I took an interest in multiplayer and how I would design a game using it. I built a couple of prototypes in Godot but nothing substantive. It was a blast to learn though!
+
+### March and April
+
+So in March, I decided to loosely participate in the [Love2D jam](https://itch.io/jam/love2d-jam-2025). I decided on a match-three-style roguelike. I quickly put together a little prototype.
+
+<BlogImage src={love2dPrototype} height="400" caption="Love2D prototype" />
+
+The gameplay loop was simple: dragging the little orbs around, making as many groups of three or more orbs as possible to deal damage. I found myself "playing" this mechanic a lot, as it was fun trying to figure out the best way to move orbs and create combos. I ended up working on this for the rest of March.
+
+Once April began, I had built out many more of the systems but began to get annoyed with Love2D, or rather with Lua. Being quite a data-driven game, the lack of data structures or strict types started to weigh me down. I'm sure some of this was my inexperience working on Lua projects. But during the second week of April, I decided to take what I had and move it into [Godot](https://godotengine.org/), which has been my engine of choice for many years now.
+
+### Current progress
+
+The game is coming along well. I've moved all of the systems over into Godot and expanded on them where I could. Most of the code in the project has been converted into C# as well. There are still some loose GDScript files floating around that will get cleaned up soon.
+
+<BlogImage src={godotPrototype} height="400" caption="Godot prototype post migration" />
+
+Guess who drew most of that art. The two sprites on screen that actually look good are from [this asset pack](https://itch.io/c/730621/heroic-collection).
+
+My goal for May is to continue down this path with the time I have between work and travel. I'm aiming to have a small vertical slice done by the end of May. I want three battles: two minor enemies and one "Boss" to introduce a few special mechanics.
+
+I knew when I started this "One game a month" thing that if I found something I really enjoyed working on, I'd pivot, and I didn't expect to last such a short period of time. But here we are, and while I'm sure I'll poke around with other prototypes here and there, I'm glad to have a focus, especially since the little bit I have has proven to be an enjoyable experience.

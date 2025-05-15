@@ -187,6 +187,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"febuary-and-march-game-2025.mdx": {
+	id: "febuary-and-march-game-2025.mdx";
+  slug: "febuary-and-march-game-2025";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 "godot-tips-and-tricks.md": {
 	id: "godot-tips-and-tricks.md";
   slug: "godot-tips-and-tricks";

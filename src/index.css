@@ -36,6 +36,10 @@ body {
 	a {
 		text-decoration: none;
 		color: var(--color-primary);
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 

@@ -7,7 +7,4 @@ node_modules
 .env.*
 !.env.example
 /dist
-
-# Panda
-styled-system
-styled-system-static
+/.astro

@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+
+type Props = {
+  src: ImageMetadata | string;
+  alt: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  class?: string;
+  eager?: boolean;
+};
+
+const { src, alt, width, height, caption, class: className } = Astro.props;
+---
+
+<figure class={`blog-image ${className || ""}`}>
+  {
+    typeof src === "object" ? (
+      <Image
+        src={src}
+        alt={alt ?? caption ?? null}
+        width={width}
+        height={height}
+        class={className ?? undefined}
+      />
+    ) : (
+      <img
+        src={src}
+        alt={alt ?? ""}
+        width={width}
+        height={height}
+        class={className ?? undefined}
+        loading="lazy"
+        decoding="async"
+      />
+    )
+  }
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .blog-image {
+    margin: var(--spacing-md) 0;
+    max-width: 100%;
+  }
+
+  .blog-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--spacing-xs);
+  }
+
+  .blog-image figcaption {
+    font-family: var(--font-sans-serif);
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    text-align: center;
+    margin-top: var(--spacing-xs);
+    padding: 0 var(--spacing-sm);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .blog-image figcaption {
+      color: var(--color-secondary);
+    }
+  }
+
+  @media (min-width: var(--breakpoint-tablet)) {
+    .blog-image {
+      margin: var(--spacing-lg) 0;
+    }
+  }
+</style>
