@@ -1,9 +1,6 @@
 <script lang="ts">
-  const handleClick= () => {
-    console.log('Button clicked!');
-  }
+	let count = $state(0);
 </script>
 
-<button on:click={handleClick}>
-  Click me
-  </button>
+<button onclick={() => (count += 1)}>Click me</button>
+<p>{count}</p>

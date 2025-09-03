@@ -1,4 +1,4 @@
-import { z, defineCollection } from 'astro:content'; // run 'npx astro sync' if ts complains about this
+import { defineCollection, z } from 'astro:content'; // run 'npx astro sync' if ts complains about this
 
 const blogCollection = defineCollection({
 	type: 'content',
@@ -8,7 +8,8 @@ const blogCollection = defineCollection({
 		updatedAt: z.date().transform((str) => new Date(str)),
 		title: z.string(),
 		category: z.enum(['personal', 'tech', 'climbing', 'media']),
-		tags: z.array(z.string()).optional()
+		tags: z.array(z.string()).optional(),
+		archived: z.boolean().default(false)
 	})
 });
 
